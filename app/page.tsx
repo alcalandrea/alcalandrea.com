@@ -14,7 +14,7 @@ export default function HomePage() {
       <div className="flex flex-wrap items-center justify-center gap-12">
         {links.map(({slug, text}) => (
           <CoreLink
-            className="flex h-56 w-56 items-center justify-center break-all rounded-full border-2 border-pink-600 bg-white text-xl font-bold uppercase text-pink-600 transition-colors hover:bg-pink-600 hover:text-white"
+            className="flex h-56 w-56 items-center justify-center rounded-full border-2 p-12 border-pink-600 bg-white text-xl font-bold uppercase text-pink-600 transition-colors hover:bg-pink-600 hover:text-white"
             href={slug}
             key={slug}
           >
