@@ -1,3 +1,3 @@
 export default function InboundMarketingPage() {
-    return <h1>Hello, Inbound Marketing Page!</h1>
+  return <h1>Hello, Inbound Marketing Page!</h1>
 }
