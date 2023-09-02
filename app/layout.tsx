@@ -1,9 +1,11 @@
 import classNames from "classnames"
 import type {Metadata} from "next"
+import {Mulish} from "next/font/google"
 import Image from "next/image"
 import CoreLink from "./components/CoreLink"
 import "./globals.css"
-import {mulish} from "./utils/fonts"
+
+const mulish = Mulish({subsets: ["latin"]})
 
 export const metadata: Metadata = {
   description: "Integrated Marketing Strategist",
@@ -43,7 +45,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
 function Header() {
   return (
-    <header className="flex w-screen flex-col items-center justify-center p-6">
+    <header className="mb-16 flex w-screen flex-col items-center justify-center p-6">
       <div className="flex w-full max-w-screen-2xl items-center justify-between">
         <CoreLink href="/" variant="underlined">
           Home

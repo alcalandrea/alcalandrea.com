@@ -2,7 +2,7 @@ import CoreLink from "./components/CoreLink"
 
 export default function HomePage() {
   return (
-    <main className="mt-16 flex flex-col items-center gap-20 px-4 text-center">
+    <main className="flex flex-col items-center gap-20 px-4 text-center">
       <div>
         <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">
           — Hi, I&apos;m Andrea. An Integrated Marketing Strategist.
