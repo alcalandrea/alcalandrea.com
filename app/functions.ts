@@ -1,4 +1,4 @@
-export default async function makeDatoRequest<T>({
+export async function makeDatoRequest<T>({
   includeDrafts = false,
   query,
   variables = {},

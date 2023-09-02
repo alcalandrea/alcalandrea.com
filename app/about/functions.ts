@@ -1,4 +1,4 @@
-import makeDatoRequest from "@/app/utils/makeDatoRequest"
+import {makeDatoRequest} from "../functions"
 import {aboutQuery} from "./constants"
 import {AboutResponse} from "./models"
 

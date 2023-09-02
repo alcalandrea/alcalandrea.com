@@ -1,6 +1,8 @@
 import classNames from "classnames"
+import {Dosis} from "next/font/google"
 import Link, {LinkProps} from "next/link"
-import {dosis} from "../utils/fonts"
+
+const dosis = Dosis({subsets: ["latin"]})
 
 export default function CoreLink({
   children,

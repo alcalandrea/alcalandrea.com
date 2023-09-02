@@ -1,9 +1,11 @@
 import classNames from "classnames"
 import type {Metadata} from "next"
+import {Mulish} from "next/font/google"
 import Image from "next/image"
 import CoreLink from "./components/CoreLink"
 import "./globals.css"
-import {mulish} from "./utils/fonts"
+
+const mulish = Mulish({subsets: ["latin"]})
 
 export const metadata: Metadata = {
   description: "Integrated Marketing Strategist",
