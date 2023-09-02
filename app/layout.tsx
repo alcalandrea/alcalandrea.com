@@ -43,7 +43,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
 function Header() {
   return (
-    <header className="flex w-screen flex-col items-center justify-center p-6">
+    <header className="mb-16 flex w-screen flex-col items-center justify-center p-6">
       <div className="flex w-full max-w-screen-2xl items-center justify-between">
         <CoreLink href="/" variant="underlined">
           Home
