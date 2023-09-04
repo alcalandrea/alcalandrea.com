@@ -1,6 +1,7 @@
 export const inboundProjectsQuery = `
   query GetAllInboundProjects {
     allInboundProjects(orderBy: [index_ASC]) {
+      id
       images {
         alt
         height

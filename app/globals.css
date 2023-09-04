@@ -26,6 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

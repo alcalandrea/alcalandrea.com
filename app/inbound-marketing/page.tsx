@@ -13,8 +13,8 @@ export default async function InboundMarketingPage() {
       </h1>
       <div className="flex max-w-screen-sm flex-col gap-6">
         {projects.map(
-          ({images, index, linkUrl, linkText, subtitle, text, title}) => (
-            <React.Fragment key={index}>
+          ({id, images, linkUrl, linkText, subtitle, text, title}) => (
+            <React.Fragment key={id}>
               {title && (
                 <h2 className="text-lg font-bold sm:text-xl lg:text-2xl">
                   {title}
@@ -29,19 +29,24 @@ export default async function InboundMarketingPage() {
                 .map((paragraph, i) => (
                   <p
                     dangerouslySetInnerHTML={{__html: paragraph}}
-                    key={`${index}-${i}`}
+                    key={`${id}-${i}`}
                   />
                 ))}
               {images.length > 0 && <ImageGallery {...{images}} />}
               {linkUrl && (
-                <CoreLink href={linkUrl} variant="underlined">
-                  {linkText || "See Metrics"}
-                </CoreLink>
+                <div>
+                  <CoreLink href={linkUrl} variant="underlined">
+                    {linkText || "See metrics"}
+                  </CoreLink>
+                </div>
               )}
             </React.Fragment>
           ),
         )}
       </div>
+      <CoreLink className="underline" href="#top-of-page">
+        Scroll to top
+      </CoreLink>
     </main>
   )
 }
