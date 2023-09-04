@@ -18,7 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body
         className={classNames(
           mulish.className,
-          "min-w-screen max-w-screen flex max-h-screen min-h-screen flex-col justify-between gap-60 overflow-x-hidden bg-white text-slate-800",
+          "no-scrollbar min-w-screen max-w-screen flex max-h-screen min-h-screen flex-col justify-between gap-60 overflow-x-hidden bg-white text-slate-800",
         )}
       >
         <div>
@@ -45,7 +45,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
 function Header() {
   return (
-    <header className="mb-16 flex w-screen flex-col items-center justify-center p-6">
+    <header
+      className="mb-16 flex w-screen flex-col items-center justify-center p-6"
+      id="top-of-page"
+    >
       <div className="flex w-full max-w-screen-2xl items-center justify-between">
         <CoreLink href="/" variant="underlined">
           Home

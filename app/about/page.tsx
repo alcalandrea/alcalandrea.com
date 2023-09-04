@@ -19,7 +19,7 @@ export default async function AboutPage() {
   return (
     <main className="flex flex-col items-center justify-center gap-20 px-4">
       <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">{title}</h1>
-      <div className="item-center flex justify-center gap-x-6 gap-y-20 max-lg:flex-col-reverse">
+      <div className="item-center flex justify-center gap-x-4 gap-y-20 max-lg:flex-col-reverse">
         <div className="relative flex flex-shrink flex-grow-0 items-center justify-center">
           <Image
             alt={image.alt}
@@ -31,9 +31,12 @@ export default async function AboutPage() {
           />
         </div>
         <div className="flex max-w-screen-sm flex-col gap-4 px-4">
-          {biography.split(/\r|\n/).map((paragraph, i) => (
-            <p dangerouslySetInnerHTML={{__html: paragraph}} key={i} />
-          ))}
+          {biography
+            .split(/\r|\n/)
+            .filter(Boolean)
+            .map((paragraph, i) => (
+              <p dangerouslySetInnerHTML={{__html: paragraph}} key={i} />
+            ))}
         </div>
       </div>
       <div className="max-w-screen-sm max-md:px-4">
