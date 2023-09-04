@@ -1,6 +1,6 @@
+import Image from "next/image"
 import React from "react"
 import CoreLink from "../components/CoreLink"
-import ImageGallery from "../components/ImageGallery"
 import {getInboundProjects} from "./functions"
 
 export default async function InboundMarketingPage() {
@@ -32,7 +32,30 @@ export default async function InboundMarketingPage() {
                     key={`${id}-${i}`}
                   />
                 ))}
-              {images.length > 0 && <ImageGallery {...{images}} />}
+              {images.length > 0 && (
+                <div className="relative bg-gray-100 sm:p-10" {...{id}}>
+                  <CoreLink
+                    aria-label="View scrollable image gallery"
+                    className="absolute right-2 top-2"
+                    href={`/inbound-marketing/images/${id}`}
+                  >
+                    <Image
+                      alt="Arrows pointing out icon"
+                      className="rounded-md transition-transform hover:scale-110"
+                      height={28}
+                      role="button"
+                      src="/arrows.svg"
+                      width={28}
+                    />
+                  </CoreLink>
+                  <Image
+                    alt={images[0].alt}
+                    height={images[0].height}
+                    src={images[0].url}
+                    width={images[0].width}
+                  />
+                </div>
+              )}
               {linkUrl && (
                 <div>
                   <CoreLink href={linkUrl} variant="underlined">
@@ -44,7 +67,7 @@ export default async function InboundMarketingPage() {
           ),
         )}
       </div>
-      <CoreLink className="underline" href="#top-of-page">
+      <CoreLink className="underline" href="/inbound-marketing#top-of-page">
         Scroll to top
       </CoreLink>
     </main>
