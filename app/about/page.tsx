@@ -31,9 +31,12 @@ export default async function AboutPage() {
           />
         </div>
         <div className="flex max-w-screen-sm flex-col gap-4 px-4">
-          {biography.split(/\r|\n/).map((paragraph, i) => (
-            <p dangerouslySetInnerHTML={{__html: paragraph}} key={i} />
-          ))}
+          {biography
+            .split(/\r|\n/)
+            .filter(Boolean)
+            .map((paragraph, i) => (
+              <p dangerouslySetInnerHTML={{__html: paragraph}} key={i} />
+            ))}
         </div>
       </div>
       <div className="max-w-screen-sm max-md:px-4">

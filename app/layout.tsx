@@ -18,7 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body
         className={classNames(
           mulish.className,
-          "min-w-screen max-w-screen flex max-h-screen min-h-screen flex-col justify-between gap-60 overflow-x-hidden bg-white text-slate-800",
+          "no-scrollbar min-w-screen max-w-screen flex max-h-screen min-h-screen flex-col justify-between gap-60 overflow-x-hidden bg-white text-slate-800",
         )}
       >
         <div>

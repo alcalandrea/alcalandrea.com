@@ -1,3 +1,5 @@
+import {DatoImage} from "../models"
+
 export type AboutResponse = {
   about: Record<
     | "biography"
@@ -6,15 +8,7 @@ export type AboutResponse = {
     | "title",
     string
   > & {
-    image: {
-      alt: string
-      url: string
-    }
-    quoteeImage: {
-      alt: string
-      height: number
-      url: string
-      width: number
-    }
+    image: Pick<DatoImage, "alt" | "url">
+    quoteeImage: Omit<DatoImage, "id">
   }
 }
