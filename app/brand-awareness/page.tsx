@@ -1,19 +1,19 @@
 import Image from "next/image"
 import React from "react"
 import CoreLink from "../components/CoreLink"
-import {getInboundProjects} from "./functions"
+import {getAwarenessProjects} from "./functions"
 
-export default async function InboundMarketingPage() {
-  const projects = await getInboundProjects()
+export default async function BrandAwarenessPage() {
+  const projects = await getAwarenessProjects()
 
   return (
     <main className="flex flex-col items-center justify-center gap-20 px-6 text-center">
       <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">
-        Inbound Marketing Campaign for Workast
+        Edsby Social Emotional Check-Ins Launch
       </h1>
       <div className="flex max-w-screen-sm flex-col gap-6">
         {projects.map(
-          ({id, images, linkUrl, linkText, subtitle, text, title}) => (
+          ({id, image, images, linkUrl, linkText, subtitle, text, title}) => (
             <React.Fragment key={id}>
               {title && (
                 <h2 className="text-lg font-bold sm:text-xl lg:text-2xl">
@@ -32,12 +32,21 @@ export default async function InboundMarketingPage() {
                     key={`${id}-${i}`}
                   />
                 ))}
+              {image && (
+                <Image
+                  alt={image.alt}
+                  className="bg-gray-100 sm:p-10"
+                  height={image.height}
+                  src={image.url}
+                  width={image.width}
+                />
+              )}
               {images.length > 0 && (
                 <div className="relative bg-gray-100 sm:p-10" {...{id}}>
                   <CoreLink
                     aria-label="View scrollable image gallery"
                     className="absolute right-2 top-2"
-                    href={`/inbound-marketing/images/${id}`}
+                    href={`/brand-awareness/images/${id}`}
                   >
                     <Image
                       alt="Arrows pointing out icon"
@@ -67,7 +76,7 @@ export default async function InboundMarketingPage() {
           ),
         )}
       </div>
-      <CoreLink className="underline" href="/inbound-marketing#top-of-page">
+      <CoreLink className="underline" href="/brand-awareness#top-of-page">
         Scroll to top
       </CoreLink>
     </main>

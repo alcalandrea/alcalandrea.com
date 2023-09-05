@@ -32,8 +32,8 @@ const links = [
     text: "Inbound Marketing",
   },
   {
-    slug: "product-marketing",
-    text: "Product Marketing",
+    slug: "brand-awareness",
+    text: "Brand Awareness",
   },
   {
     slug: "event-planning",

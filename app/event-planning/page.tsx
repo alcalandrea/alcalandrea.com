@@ -4,9 +4,7 @@ export default function EventPlanningPage() {
       <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">
         Event Planning
       </h1>
-      <h2 className="text-lg font-bold sm:text-xl lg:text-2xl">
-        Coming Soon!
-      </h2>
+      <h2 className="text-lg font-bold sm:text-xl lg:text-2xl">Coming Soon!</h2>
     </main>
   )
 }
