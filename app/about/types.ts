@@ -8,7 +8,7 @@ export type AboutResponse = {
     | "title",
     string
   > & {
-    image: Pick<DatoImage, "alt" | "url">
+    image: Omit<DatoImage, "id">
     quoteeImage: Omit<DatoImage, "id">
   }
 }

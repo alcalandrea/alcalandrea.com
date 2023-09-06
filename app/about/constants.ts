@@ -4,7 +4,9 @@ export const aboutQuery = `
       biography
       image {
         alt
+        height
         url
+        width
       }
       quote1
       quote2
