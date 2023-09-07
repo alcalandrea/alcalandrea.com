@@ -3,7 +3,7 @@ import {specialties, specialtyQueryKeys} from "./constants"
 import {CampaignsResponse, Specialty} from "./types"
 
 /**
- * Evaluates whether the argument is receives is a valid specialty
+ * Evaluates whether the argument it receives is a valid specialty
  */
 export function isSpecialty(specialty: unknown): specialty is Specialty {
   return specialties.includes(specialty as Specialty)
