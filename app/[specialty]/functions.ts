@@ -2,6 +2,16 @@ import {makeDatoRequest} from "../functions"
 import {specialties, specialtyQueryKeys} from "./constants"
 import {CampaignsResponse, Specialty} from "./types"
 
+/**
+ * Evaluates whether the argument is receives is a valid specialty
+ */
+export function isSpecialty(specialty: unknown): specialty is Specialty {
+  return specialties.includes(specialty as Specialty)
+}
+
+/**
+ * Loads all campaigns related to a specialty
+ */
 export async function getCampaigns({specialty}: {specialty: Specialty}) {
   const queryKey = specialtyQueryKeys[specialty]
   const res = await makeDatoRequest<CampaignsResponse>({
@@ -32,8 +42,4 @@ export async function getCampaigns({specialty}: {specialty: Specialty}) {
     `,
   })
   return Object.values(res)[0]
-}
-
-export function isSpecialty(specialty: unknown): specialty is Specialty {
-  return specialties.includes(specialty as Specialty)
 }

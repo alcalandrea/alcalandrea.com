@@ -4,6 +4,10 @@ import Link, {LinkProps} from "next/link"
 
 const dosis = Dosis({subsets: ["latin"]})
 
+/**
+ * A basic link to an internal or external route. Can
+ * be styled by passing a variant and/or a className
+ */
 export default function CoreLink({
   children,
   className,
@@ -23,7 +27,7 @@ export default function CoreLink({
         variant === "filled"
           ? "rounded-xl border border-pink-600 bg-pink-600 px-4 py-1 font-bold text-white transition-colors hover:bg-white hover:text-pink-600"
           : variant === "underlined"
-          ? "text-pink-600 underline"
+          ? "text-pink-600 underline dark:text-pink-400"
           : "",
       )}
       href={href}

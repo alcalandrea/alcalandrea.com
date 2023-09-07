@@ -1,3 +1,6 @@
+/**
+ * Requests data from the CMS which matches the query it receives
+ */
 export async function makeDatoRequest<T>({
   includeDrafts = false,
   query,
@@ -14,6 +17,9 @@ export async function makeDatoRequest<T>({
       ...(includeDrafts ? {"X-Include-Drafts": "true"} : {}),
     },
     method: "POST",
+    next: {
+      revalidate: 3600,
+    },
   })
 
   const responseBody = await response.json()

@@ -5,6 +5,9 @@ import Image from "next/image"
 import {redirect} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
 
+/**
+ * Displays all images from a campaign project in a scrollable gallery
+ */
 export default async function InboundMarketingImagePage({
   params: {campaignId, projectId, specialty},
 }: {
@@ -14,25 +17,32 @@ export default async function InboundMarketingImagePage({
     specialty: string
   }
 }) {
+  /* redirect home if the specialty is invalid */
   if (!isSpecialty(specialty)) {
     redirect("/")
   }
 
+  /* load all images which match the specialty, campaign, and project */
   const images = await loadCampaignProjectImages({
     campaignId,
     projectId,
     specialty,
   })
 
+  /* redirect to the specialty page if there are no images */
   if (images.length === 0) {
     redirect(`/${specialty}`)
   }
 
+  /* this is the route we will use for closing the page, which
+  shows the specialty page with this first image at the top */
   const route = `/${specialty}#${projectId}`
 
   return (
-    <main className="flex h-screen w-screen justify-center bg-gray-100">
+    <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-gray-700">
+      {/* navigate to the specialty page if the user hits escape */}
       <HandleKeyup keyName="Escape" {...{route}} />
+      {/* X button, which also navigates to the specialty page */}
       <CoreLink
         aria-label="Close scrollable image gallery"
         className="absolute right-6 top-6"
@@ -46,6 +56,7 @@ export default async function InboundMarketingImagePage({
           width={28}
         />
       </CoreLink>
+      {/* scrollable image gallery */}
       <div className="max-w-screen-lg overflow-y-scroll">
         {images.map(({alt, height, id, url, width}, i) => (
           <Image

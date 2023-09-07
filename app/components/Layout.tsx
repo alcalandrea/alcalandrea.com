@@ -1,6 +1,9 @@
 import Image from "next/image"
 import CoreLink from "./CoreLink"
 
+/**
+ * A wrapper which includes the site's main header and footer
+ */
 export default function Layout({children}: {children: React.ReactNode}) {
   return (
     <>
@@ -13,6 +16,9 @@ export default function Layout({children}: {children: React.ReactNode}) {
   )
 }
 
+/**
+ * The site's main header, with internal links and the main title
+ */
 function Header() {
   return (
     <header
@@ -34,7 +40,7 @@ function Header() {
       </div>
       <span className="flex items-center">
         <CoreLink
-          className="mt-8 text-center text-xl font-extrabold uppercase md:-mt-8"
+          className="mt-8 text-center text-xl font-extrabold uppercase md:-mt-7"
           href="/"
         >
           Andrea Alcala Vasquez
@@ -44,11 +50,20 @@ function Header() {
   )
 }
 
+/**
+ * The site's main footer, with an external link and copyright info
+ */
 function Footer() {
   return (
     <footer className="flex w-screen flex-col items-center justify-center gap-3">
       <CoreLink href="https://www.linkedin.com/in/alcalandrea/">
-        <Image alt="LinkedIn Logo" height={15} src="/linkedin.svg" width={15} />
+        <Image
+          alt="LinkedIn Logo"
+          className="dark:invert"
+          height={15}
+          src="/linkedin.svg"
+          width={15}
+        />
       </CoreLink>
       <p className="pb-4 text-xs">Copyright © 2023 | Andrea Alcala Vasquez</p>
     </footer>

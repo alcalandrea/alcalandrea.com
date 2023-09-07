@@ -1,5 +1,8 @@
-import {DatoImage} from "@/app/models"
+import {DatoImage} from "@/app/types"
 
+/**
+ * The response we get when requesting all images from a certain campaign
+ */
 export type CampaignProjectImagesResponse = {
   [key: PropertyKey]: Array<{
     id: string

@@ -3,6 +3,9 @@ import {Specialty} from "@/app/[specialty]/types"
 import {makeDatoRequest} from "@/app/functions"
 import {CampaignProjectImagesResponse} from "./types"
 
+/**
+ * Loads the images which match a specialty, campaign, and project
+ */
 export async function loadCampaignProjectImages({
   campaignId,
   projectId,

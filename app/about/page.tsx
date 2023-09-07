@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "About Me | Andrea Alcala Vasquez",
 }
 
+/**
+ * The about page, which includes a photo, a brief biography,
+ * a quote, and information about the quote's author
+ */
 export default async function AboutPage() {
   const {
     biography,
