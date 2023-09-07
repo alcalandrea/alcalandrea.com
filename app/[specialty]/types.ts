@@ -1,8 +1,15 @@
-import {DatoImage} from "../models"
+import {DatoImage} from "../types"
 import {specialties} from "./constants"
 
+/**
+ * The specialties which each have their own page
+ */
 export type Specialty = (typeof specialties)[number]
 
+/**
+ * The response we get when loading all of the
+ * campaigns from within a specific specialty
+ */
 export type CampaignsResponse = {
   [key: PropertyKey]: Array<{
     id: string

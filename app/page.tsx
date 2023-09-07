@@ -2,6 +2,10 @@ import {specialties} from "./[specialty]/constants"
 import CoreLink from "./components/CoreLink"
 import Layout from "./components/Layout"
 
+/**
+ * The site's main landing page, which contains a brief
+ * intro and stylized links to the specialty pages
+ */
 export default function HomePage() {
   return (
     <Layout>
@@ -30,6 +34,7 @@ export default function HomePage() {
   )
 }
 
+/* map each slug to its display text (eg. event-planning -> Event Planning) */
 const links = specialties.map(slug => ({
   slug,
   text: slug

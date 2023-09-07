@@ -1,3 +1,6 @@
+/**
+ * The query we use to fetch the about page's data from the CMS
+ */
 export const aboutQuery = `
   query GetAbout {
     about {

@@ -9,6 +9,9 @@ type Props = {
   params: {specialty: string}
 }
 
+/**
+ * Generates metadata which corresponds to the specialty
+ */
 export function generateMetadata({params: {specialty}}: Props) {
   return {
     title: `${specialty
@@ -18,11 +21,16 @@ export function generateMetadata({params: {specialty}}: Props) {
   }
 }
 
+/**
+ * Dynamic page which displays all campaigns related to a specialty
+ */
 export default async function SpecialtyPage({params: {specialty}}: Props) {
+  /* redirect home if the specialty param is invalid */
   if (!isSpecialty(specialty)) {
     redirect("/")
   }
 
+  /* load all campaigns for this specialty */
   const campaigns = await getCampaigns({specialty})
 
   return (
@@ -60,7 +68,7 @@ export default async function SpecialtyPage({params: {specialty}}: Props) {
                       </h3>
                     )}
                     {text
-                      ?.split(/\r|\n/)
+                      .split(/\r|\n/)
                       .filter(Boolean)
                       .map((paragraph, i) => (
                         <p
@@ -69,7 +77,12 @@ export default async function SpecialtyPage({params: {specialty}}: Props) {
                         />
                       ))}
                     {images.length > 0 && (
-                      <div className="relative bg-gray-100 sm:p-10" {...{id}}>
+                      <div
+                        className="relative bg-gray-100 dark:bg-gray-700 sm:p-10"
+                        {...{id}}
+                      >
+                        {/* we only display the link to view the image
+                        gallery if there are at least two images */}
                         {images.length > 1 && (
                           <CoreLink
                             aria-label="View scrollable image gallery"
