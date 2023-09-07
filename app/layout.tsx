@@ -7,7 +7,7 @@ const mulish = Mulish({subsets: ["latin"]})
 
 export const metadata: Metadata = {
   description: "Integrated Marketing Strategist",
-  title: "Andrea Alcalá Vásquez",
+  title: "Andrea Alcala Vasquez",
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

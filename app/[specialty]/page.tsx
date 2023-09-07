@@ -5,11 +5,20 @@ import CoreLink from "../components/CoreLink"
 import Layout from "../components/Layout"
 import {getCampaigns, isSpecialty} from "./functions"
 
-export default async function SpecialtyPage({
-  params: {specialty},
-}: {
+type Props = {
   params: {specialty: string}
-}) {
+}
+
+export function generateMetadata({params: {specialty}}: Props) {
+  return {
+    title: `${specialty
+      .split("-")
+      .map(s => s[0].toUpperCase() + s.slice(1))
+      .join(" ")} | Andrea Alcala Vasquez`,
+  }
+}
+
+export default async function SpecialtyPage({params: {specialty}}: Props) {
   if (!isSpecialty(specialty)) {
     redirect("/")
   }

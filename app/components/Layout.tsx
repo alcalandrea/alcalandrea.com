@@ -37,7 +37,7 @@ function Header() {
           className="mt-8 text-center text-xl font-extrabold uppercase md:-mt-8"
           href="/"
         >
-          Andrea Alcalá Vásquez
+          Andrea Alcala Vasquez
         </CoreLink>
       </span>
     </header>

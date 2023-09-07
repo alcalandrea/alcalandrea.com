@@ -1,7 +1,12 @@
+import {Metadata} from "next"
 import Image from "next/image"
 import CoreLink from "../components/CoreLink"
 import Layout from "../components/Layout"
 import {loadAboutPageData} from "./functions"
+
+export const metadata: Metadata = {
+  title: "About Me | Andrea Alcala Vasquez",
+}
 
 export default async function AboutPage() {
   const {
