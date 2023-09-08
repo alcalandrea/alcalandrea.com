@@ -1,7 +1,7 @@
 import {specialties} from "./[specialty]/constants"
 import {getSpecialtyText} from "./[specialty]/functions"
+import ContentWrapper from "./components/ContentWrapper"
 import CoreLink from "./components/CoreLink"
-import Layout from "./components/Layout"
 
 /**
  * The site's main landing page, which contains a brief
@@ -9,14 +9,14 @@ import Layout from "./components/Layout"
  */
 export default function HomePage() {
   return (
-    <Layout>
+    <ContentWrapper>
       <main className="flex flex-col items-center gap-20 px-4 text-center">
         <div>
           <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">
-            — Hi, I&apos;m Andrea. An Integrated Marketing Strategist.
+            I&apos;m Andrea, an Integrated Marketing Strategist
           </h1>
           <h2 className="mt-1 text-lg font-bold sm:text-xl lg:text-2xl">
-            Based in Toronto, working worldwide.
+            Based in Toronto, working worldwide ✌️
           </h2>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-12">
@@ -31,11 +31,12 @@ export default function HomePage() {
           ))}
         </div>
       </main>
-    </Layout>
+    </ContentWrapper>
   )
 }
 
-/* map each slug to its display text (eg. event-planning -> Event Planning) */
+/* the slug and display text we use for the links to the
+specialty pages (eg. event-planning -> Event Planning) */
 const links = specialties.map(slug => ({
   slug,
   text: getSpecialtyText(slug),

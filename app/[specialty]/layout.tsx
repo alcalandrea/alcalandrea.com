@@ -8,7 +8,7 @@ import {SpecialtyProps} from "./types"
 export async function generateMetadata({params: {specialty}}: SpecialtyProps) {
   if (isSpecialty(specialty)) {
     const title = getSpecialtyText(specialty)
-    const campaigns = await getCampaigns({specialty})
+    const campaigns = await getCampaigns(specialty)
     const metadata: Metadata = {
       description: `${title} campaigns led by Andrea Alcala Vasquez, including ${campaigns[0].title}`,
       keywords: [title, ...campaigns.map(c => c.title)],

@@ -1,5 +1,5 @@
 import {makeDatoRequest} from "../functions"
-import {specialties, specialtyQueryKeys} from "./constants"
+import {specialties} from "./constants"
 import {CampaignsResponse, Specialty} from "./types"
 
 /**
@@ -21,14 +21,24 @@ export function getSpecialtyText(specialty: Specialty) {
 }
 
 /**
+ * Generates the key we use in the CMS for the campaigns of a
+ * specialty (eg. inbound-marketing -> allInboundCampaigns)
+ */
+export function getCampaignKey(specialty: Specialty) {
+  return `all${
+    specialty.split("-").map(s => s[0].toUpperCase() + s.slice(1))[0]
+  }Campaigns`
+}
+
+/**
  * Loads all campaigns related to a specialty
  */
-export async function getCampaigns({specialty}: {specialty: Specialty}) {
-  const queryKey = specialtyQueryKeys[specialty]
-  const res = await makeDatoRequest<CampaignsResponse>({
+export function getCampaigns(specialty: Specialty) {
+  const campaignKey = getCampaignKey(specialty)
+  return makeDatoRequest<CampaignsResponse>({
     query: `
       query GetCampaigns {
-        all${queryKey}Campaigns(orderBy: [index_ASC]) {
+        ${campaignKey}(orderBy: [index_ASC]) {
           id
           index
           projects {
@@ -52,5 +62,4 @@ export async function getCampaigns({specialty}: {specialty: Specialty}) {
       }
     `,
   })
-  return Object.values(res)[0]
 }

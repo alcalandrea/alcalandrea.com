@@ -10,23 +10,21 @@ export type Specialty = (typeof specialties)[number]
  * The response we get when loading all of the
  * campaigns from within a specific specialty
  */
-export type CampaignsResponse = {
-  [key: PropertyKey]: Array<{
+export type CampaignsResponse = Array<{
+  id: string
+  index: number
+  projects: Array<{
     id: string
+    images: Array<DatoImage>
     index: number
-    projects: Array<{
-      id: string
-      images: Array<DatoImage>
-      index: number
-      linkText: string
-      linkUrl: string
-      subtitle: string
-      text: string
-      title: string
-    }>
+    linkText: string
+    linkUrl: string
+    subtitle: string
+    text: string
     title: string
   }>
-}
+  title: string
+}>
 
 /**
  * The props layout/page can access from within this module

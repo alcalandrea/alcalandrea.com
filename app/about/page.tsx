@@ -1,6 +1,6 @@
 import Image from "next/image"
+import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
-import Layout from "../components/Layout"
 import {loadAboutPageData} from "./functions"
 
 /**
@@ -22,7 +22,7 @@ export default async function AboutPage() {
   } = await loadAboutPageData()
 
   return (
-    <Layout>
+    <ContentWrapper>
       <main className="flex flex-col items-center justify-center gap-20 px-4">
         <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">{title}</h1>
         <div className="flex max-w-screen-lg items-center justify-center gap-x-4 gap-y-20 max-lg:flex-col-reverse lg:px-4">
@@ -68,6 +68,6 @@ export default async function AboutPage() {
           </div>
         </div>
       </main>
-    </Layout>
+    </ContentWrapper>
   )
 }
