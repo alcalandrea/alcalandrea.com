@@ -1,4 +1,5 @@
 import {specialties} from "./[specialty]/constants"
+import {getSpecialtyText} from "./[specialty]/functions"
 import CoreLink from "./components/CoreLink"
 import Layout from "./components/Layout"
 
@@ -37,8 +38,5 @@ export default function HomePage() {
 /* map each slug to its display text (eg. event-planning -> Event Planning) */
 const links = specialties.map(slug => ({
   slug,
-  text: slug
-    .split("-")
-    .map(s => s[0].toUpperCase() + s.slice(1))
-    .join(" "),
+  text: getSpecialtyText(slug),
 }))

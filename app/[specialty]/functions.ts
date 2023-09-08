@@ -10,6 +10,17 @@ export function isSpecialty(specialty: unknown): specialty is Specialty {
 }
 
 /**
+ * Converts a specialty to its display text
+ * (eg. inbound-marketing -> Inbound Marketing)
+ */
+export function getSpecialtyText(specialty: Specialty) {
+  return specialty
+    .split("-")
+    .map(s => s[0].toUpperCase() + s.slice(1))
+    .join(" ")
+}
+
+/**
  * Loads all campaigns related to a specialty
  */
 export async function getCampaigns({specialty}: {specialty: Specialty}) {

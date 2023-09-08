@@ -27,3 +27,10 @@ export type CampaignsResponse = {
     title: string
   }>
 }
+
+/**
+ * The props layout/page can access from within this module
+ */
+export type SpecialtyProps = {
+  params: {specialty: string}
+}

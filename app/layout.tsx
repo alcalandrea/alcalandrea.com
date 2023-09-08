@@ -9,8 +9,35 @@ const mulish = Mulish({subsets: ["latin"]})
  * Default metadata for all pages
  */
 export const metadata: Metadata = {
+  applicationName: "Andrea Alcala Vasquez",
+  authors: [
+    {name: "Andrea Alcala Vasquez"},
+    {name: "Max Monis", url: "https://maxmonis.com"},
+  ],
+  creator: "Andrea Alcala Vasquez",
   description: "Integrated Marketing Strategist",
-  title: "Andrea Alcala Vasquez",
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  generator: "Next.js",
+  keywords: [
+    "Andrea Alcala",
+    "Andrea Vasquez",
+    "Andrea Alcala Vasquez",
+    "Andrea Alcala Toronto",
+    "Andrea Vasquez Toronto",
+    "Andrea Alcala Vasquez Toronto",
+    "Marketing Strategist Toronto",
+    "Marketing Manager Toronto",
+  ],
+  publisher: "Vercel",
+  referrer: "origin-when-cross-origin",
+  title: {
+    default: "Andrea Alcala Vasquez",
+    template: "%s | Andrea Alcala Vasquez",
+  },
 }
 
 /**

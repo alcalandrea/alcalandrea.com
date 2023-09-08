@@ -4,27 +4,14 @@ import React from "react"
 import CoreLink from "../components/CoreLink"
 import Layout from "../components/Layout"
 import {getCampaigns, isSpecialty} from "./functions"
-
-type Props = {
-  params: {specialty: string}
-}
-
-/**
- * Generates metadata which corresponds to the specialty
- */
-export function generateMetadata({params: {specialty}}: Props) {
-  return {
-    title: `${specialty
-      .split("-")
-      .map(s => s[0].toUpperCase() + s.slice(1))
-      .join(" ")} | Andrea Alcala Vasquez`,
-  }
-}
+import {SpecialtyProps} from "./types"
 
 /**
  * Dynamic page which displays all campaigns related to a specialty
  */
-export default async function SpecialtyPage({params: {specialty}}: Props) {
+export default async function SpecialtyPage({
+  params: {specialty},
+}: SpecialtyProps) {
   /* redirect home if the specialty param is invalid */
   if (!isSpecialty(specialty)) {
     redirect("/")
