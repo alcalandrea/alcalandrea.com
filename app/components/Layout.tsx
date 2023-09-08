@@ -55,7 +55,7 @@ function Header() {
  */
 function Footer() {
   return (
-    <footer className="flex w-screen flex-col items-center justify-center gap-3">
+    <footer className="flex w-screen flex-col items-center justify-center pb-6 text-center">
       <CoreLink href="https://www.linkedin.com/in/alcalandrea/">
         <Image
           alt="LinkedIn Logo"
@@ -65,7 +65,18 @@ function Footer() {
           width={15}
         />
       </CoreLink>
-      <p className="pb-4 text-xs">Copyright © 2023 | Andrea Alcala Vasquez</p>
+      <p className="mb-1 mt-3 text-xs">
+        Designed in{" "}
+        <CoreLink className="underline" href="https://www.figma.com/">
+          Figma
+        </CoreLink>
+        . Data obtained with{" "}
+        <CoreLink className="underline" href="https://www.semrush.com/">
+          Semrush
+        </CoreLink>
+        .
+      </p>
+      <p className="text-xs">Copyright © 2023 | Andrea Alcala Vasquez</p>
     </footer>
   )
 }
