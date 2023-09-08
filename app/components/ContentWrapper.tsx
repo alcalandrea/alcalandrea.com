@@ -4,7 +4,11 @@ import CoreLink from "./CoreLink"
 /**
  * A wrapper which includes the site's main header and footer
  */
-export default function Layout({children}: {children: React.ReactNode}) {
+export default function ContentWrapper({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <>
       <div>
@@ -70,7 +74,7 @@ function Footer() {
         <CoreLink className="underline" href="https://www.figma.com/">
           Figma
         </CoreLink>
-        . Data obtained with{" "}
+        . Metrics obtained with{" "}
         <CoreLink className="underline" href="https://www.semrush.com/">
           Semrush
         </CoreLink>

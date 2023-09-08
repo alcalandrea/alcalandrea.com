@@ -1,4 +1,4 @@
-import {specialtyQueryKeys} from "@/app/[specialty]/constants"
+import {getCampaignKey} from "@/app/[specialty]/functions"
 import {Specialty} from "@/app/[specialty]/types"
 import {makeDatoRequest} from "@/app/functions"
 import {CampaignProjectImagesResponse} from "./types"
@@ -15,11 +15,11 @@ export async function loadCampaignProjectImages({
   projectId: string
   specialty: Specialty
 }) {
-  const queryKey = specialtyQueryKeys[specialty]
+  const campaignKey = getCampaignKey(specialty)
   const res = await makeDatoRequest<CampaignProjectImagesResponse>({
     query: `
       query GetCampaignProjectImages {
-        all${queryKey}Campaigns(filter: {id: {eq: ${campaignId}}}) {
+        ${campaignKey}(filter: {id: {eq: ${campaignId}}}) {
           id
           projects {
             id
@@ -35,8 +35,5 @@ export async function loadCampaignProjectImages({
       }
     `,
   })
-  return (
-    Object.values(res)[0][0]?.projects.find(p => p.id === projectId)?.images ??
-    []
-  )
+  return res[0]?.projects.find(p => p.id === projectId)?.images ?? []
 }

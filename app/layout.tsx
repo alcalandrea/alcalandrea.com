@@ -3,11 +3,10 @@ import type {Metadata} from "next"
 import {Mulish} from "next/font/google"
 import "./globals.css"
 
+/* we will use this font globally by default */
 const mulish = Mulish({subsets: ["latin"]})
 
-/**
- * Default metadata for all pages
- */
+/* default metadata for all pages */
 export const metadata: Metadata = {
   applicationName: "Andrea Alcala Vasquez",
   authors: [

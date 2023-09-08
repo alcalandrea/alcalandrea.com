@@ -32,5 +32,5 @@ export async function makeDatoRequest<T>({
     )
   }
 
-  return responseBody.data as T
+  return Object.values(responseBody.data)[0] as T
 }

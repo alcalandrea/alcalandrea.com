@@ -1,8 +1,8 @@
 import Image from "next/image"
 import {redirect} from "next/navigation"
 import React from "react"
+import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
-import Layout from "../components/Layout"
 import {getCampaigns, isSpecialty} from "./functions"
 import {SpecialtyProps} from "./types"
 
@@ -18,10 +18,10 @@ export default async function SpecialtyPage({
   }
 
   /* load all campaigns for this specialty */
-  const campaigns = await getCampaigns({specialty})
+  const campaigns = await getCampaigns(specialty)
 
   return (
-    <Layout>
+    <ContentWrapper>
       <main className="flex flex-col items-center justify-center gap-20 px-6 text-center">
         {campaigns.map(campaign => (
           <div
@@ -112,6 +112,6 @@ export default async function SpecialtyPage({
           Scroll to top
         </CoreLink>
       </main>
-    </Layout>
+    </ContentWrapper>
   )
 }
