@@ -3,10 +3,9 @@ import {useRouter} from "next/navigation"
 import {useKeyup} from "../hooks"
 
 /**
- * A client component which redirects the user to the
- * specified route if they press the specified key
+ * Redirects the user to the specified route if they press the specified key
  */
-export default function HandleKeyup({
+export default function NavigateOnKeyup({
   keyName,
   route,
 }: {

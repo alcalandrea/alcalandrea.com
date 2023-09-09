@@ -1,6 +1,6 @@
 import {isSpecialty} from "@/app/[specialty]/functions"
 import CoreLink from "@/app/components/CoreLink"
-import HandleKeyup from "@/app/components/HandleKeyup"
+import NavigateOnKeyup from "@/app/components/NavigateOnKeyup"
 import Image from "next/image"
 import {redirect} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
@@ -41,7 +41,7 @@ export default async function InboundMarketingImagePage({
   return (
     <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-gray-700">
       {/* navigate to the specialty page if the user hits escape */}
-      <HandleKeyup keyName="Escape" {...{route}} />
+      <NavigateOnKeyup keyName="Escape" {...{route}} />
       {/* X button, which also navigates to the specialty page */}
       <CoreLink
         aria-label="Close scrollable image gallery"

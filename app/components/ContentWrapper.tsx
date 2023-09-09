@@ -2,7 +2,7 @@ import Image from "next/image"
 import CoreLink from "./CoreLink"
 
 /**
- * A wrapper which includes the site's main header and footer
+ * A wrapper which includes the site's header and footer
  */
 export default function ContentWrapper({
   children,
@@ -21,7 +21,7 @@ export default function ContentWrapper({
 }
 
 /**
- * The site's main header, with internal links and the main title
+ * The site's header, with internal links and the main title
  */
 function Header() {
   return (
@@ -55,7 +55,7 @@ function Header() {
 }
 
 /**
- * The site's main footer, with an external link and copyright info
+ * The site's footer, with external links and copyright info
  */
 function Footer() {
   return (
@@ -80,7 +80,7 @@ function Footer() {
         </CoreLink>
         .
       </p>
-      <p>Copyright © 2023 | Andrea Alcala Vasquez</p>
+      <p>Copyright © {new Date().getFullYear()} | Andrea Alcala Vasquez</p>
     </footer>
   )
 }

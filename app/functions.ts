@@ -34,3 +34,10 @@ export async function makeDatoRequest<T>({
 
   return Object.values(responseBody.data)[0] as T
 }
+
+/**
+ * Capitalizes the first letter of a string and makes the rest of it lowercase
+ */
+export function capitalize(s: string) {
+  return s ? s[0].toUpperCase() + s.slice(1).toLowerCase() : ""
+}

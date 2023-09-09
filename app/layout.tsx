@@ -4,7 +4,7 @@ import {Mulish} from "next/font/google"
 import "./globals.css"
 
 /* we will use this font globally by default */
-const mulish = Mulish({subsets: ["latin"]})
+const mulish = Mulish({subsets: ["latin"], weight: ["500", "700", "800"]})
 
 /* default metadata for all pages */
 export const metadata: Metadata = {
