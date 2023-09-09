@@ -20,13 +20,13 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-12">
-          {links.map(({slug, text}) => (
+          {specialties.map(specialty => (
             <CoreLink
               className="flex h-56 w-56 items-center justify-center rounded-full border-2 border-pink-600 bg-white p-12 text-xl font-bold uppercase text-pink-600 transition-colors hover:bg-pink-600 hover:text-white"
-              href={slug}
-              key={slug}
+              href={specialty}
+              key={specialty}
             >
-              {text}
+              {getSpecialtyText(specialty)}
             </CoreLink>
           ))}
         </div>
@@ -34,10 +34,3 @@ export default function HomePage() {
     </ContentWrapper>
   )
 }
-
-/* the slug and display text we use for the links to the
-specialty pages (eg. event-planning -> Event Planning) */
-const links = specialties.map(slug => ({
-  slug,
-  text: getSpecialtyText(slug),
-}))

@@ -1,4 +1,4 @@
-import {makeDatoRequest} from "../functions"
+import {capitalize, makeDatoRequest} from "../functions"
 import {specialties} from "./constants"
 import {CampaignsResponse, Specialty} from "./types"
 
@@ -14,10 +14,7 @@ export function isSpecialty(specialty: unknown): specialty is Specialty {
  * (eg. inbound-marketing -> Inbound Marketing)
  */
 export function getSpecialtyText(specialty: Specialty) {
-  return specialty
-    .split("-")
-    .map(s => s[0].toUpperCase() + s.slice(1))
-    .join(" ")
+  return specialty.split("-").map(capitalize).join(" ")
 }
 
 /**
@@ -25,9 +22,7 @@ export function getSpecialtyText(specialty: Specialty) {
  * specialty (eg. inbound-marketing -> allInboundCampaigns)
  */
 export function getCampaignKey(specialty: Specialty) {
-  return `all${
-    specialty.split("-").map(s => s[0].toUpperCase() + s.slice(1))[0]
-  }Campaigns`
+  return `all${capitalize(specialty.split("-")[0])}Campaigns`
 }
 
 /**
@@ -46,7 +41,6 @@ export function getCampaigns(specialty: Specialty) {
             images {
               alt
               height
-              id
               url
               width
             }

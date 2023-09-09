@@ -15,7 +15,7 @@ export type CampaignsResponse = Array<{
   index: number
   projects: Array<{
     id: string
-    images: Array<DatoImage>
+    images: Array<Omit<DatoImage, "id">>
     index: number
     linkText: string
     linkUrl: string
@@ -27,7 +27,7 @@ export type CampaignsResponse = Array<{
 }>
 
 /**
- * The props layout/page can access from within this module
+ * The props which can be accessed from within this module
  */
 export type SpecialtyProps = {
   params: {specialty: string}

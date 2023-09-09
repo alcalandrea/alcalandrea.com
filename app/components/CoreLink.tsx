@@ -3,7 +3,7 @@ import {Dosis} from "next/font/google"
 import Link, {LinkProps} from "next/link"
 
 /* we only apply this font to these links */
-const dosis = Dosis({subsets: ["latin"]})
+const dosis = Dosis({subsets: ["latin"], weight: ["500", "700", "800"]})
 
 /**
  * A basic link to an internal or external route. Can
