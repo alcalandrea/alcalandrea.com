@@ -4,19 +4,14 @@ import NavigateOnKeyup from "@/app/components/NavigateOnKeyup"
 import Image from "next/image"
 import {redirect} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
+import {CampaignProjectImagesProps} from "./types"
 
 /**
  * Displays all images from a campaign project in a scrollable gallery
  */
-export default async function InboundMarketingImagePage({
+export default async function CampaignProjectImagesPage({
   params: {campaignId, projectId, specialty},
-}: {
-  params: {
-    campaignId: string
-    projectId: string
-    specialty: string
-  }
-}) {
+}: CampaignProjectImagesProps) {
   /* redirect home if the specialty is invalid */
   if (!isSpecialty(specialty)) {
     redirect("/")
