@@ -1,6 +1,9 @@
 import {MetadataRoute} from "next"
 import {specialties} from "./[specialty]/constants"
 
+/**
+ * Generates sitemap.xml file for this app
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
