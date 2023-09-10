@@ -39,7 +39,7 @@ export default async function InboundMarketingImagePage({
   const route = `/${specialty}#${projectId}`
 
   return (
-    <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-gray-700">
+    <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-slate-900">
       {/* navigate to the specialty page if the user hits escape */}
       <NavigateOnKeyup keyName="Escape" {...{route}} />
       {/* X button, which also navigates to the specialty page */}
