@@ -41,6 +41,7 @@ export function getCampaigns(specialty: Specialty) {
             images {
               alt
               height
+              title
               url
               width
             }

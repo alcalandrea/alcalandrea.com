@@ -92,6 +92,7 @@ export default async function SpecialtyPage({
                           height={images[0].height}
                           priority={index === 0}
                           src={images[0].url}
+                          title={images[0].title || images[0].alt}
                           width={images[0].width}
                         />
                       </div>
