@@ -1,5 +1,5 @@
 import {Metadata} from "next"
-import {getCampaigns, getSpecialtyText, isSpecialty} from "./functions"
+import {getCampaigns, getSpecialtyTitle, isSpecialty} from "./functions"
 import {SpecialtyProps} from "./types"
 
 /**
@@ -7,7 +7,7 @@ import {SpecialtyProps} from "./types"
  */
 export async function generateMetadata({params: {specialty}}: SpecialtyProps) {
   if (isSpecialty(specialty)) {
-    const title = getSpecialtyText(specialty)
+    const title = getSpecialtyTitle(specialty)
     const campaigns = await getCampaigns(specialty)
     const metadata: Metadata = {
       description: `${title} campaigns led by Andrea Alcala Vasquez, including ${campaigns[0].title}`,

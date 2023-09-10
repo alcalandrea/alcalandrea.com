@@ -10,3 +10,14 @@ export type CampaignProjectImagesResponse = Array<{
     images: Array<DatoImage>
   }>
 }>
+
+/**
+ * The props which can be accessed from within this module
+ */
+export type CampaignProjectImagesProps = {
+  params: {
+    campaignId: string
+    projectId: string
+    specialty: string
+  }
+}

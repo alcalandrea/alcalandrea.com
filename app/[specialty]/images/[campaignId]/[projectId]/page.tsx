@@ -4,19 +4,14 @@ import NavigateOnKeyup from "@/app/components/NavigateOnKeyup"
 import Image from "next/image"
 import {redirect} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
+import {CampaignProjectImagesProps} from "./types"
 
 /**
  * Displays all images from a campaign project in a scrollable gallery
  */
-export default async function InboundMarketingImagePage({
+export default async function CampaignProjectImagesPage({
   params: {campaignId, projectId, specialty},
-}: {
-  params: {
-    campaignId: string
-    projectId: string
-    specialty: string
-  }
-}) {
+}: CampaignProjectImagesProps) {
   /* redirect home if the specialty is invalid */
   if (!isSpecialty(specialty)) {
     redirect("/")
@@ -39,7 +34,7 @@ export default async function InboundMarketingImagePage({
   const route = `/${specialty}#${projectId}`
 
   return (
-    <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-gray-700">
+    <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-slate-900">
       {/* navigate to the specialty page if the user hits escape */}
       <NavigateOnKeyup keyName="Escape" {...{route}} />
       {/* X button, which also navigates to the specialty page */}
