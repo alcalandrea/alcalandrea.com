@@ -4,7 +4,7 @@ import React from "react"
 import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
 import {specialties} from "./constants"
-import {getCampaigns, getSpecialtyText, isSpecialty} from "./functions"
+import {getCampaigns, getSpecialtyTitle, isSpecialty} from "./functions"
 import {SpecialtyProps} from "./types"
 
 /**
@@ -114,7 +114,7 @@ export default async function SpecialtyPage({
             .filter(s => s !== specialty)
             .map(slug => (
               <CoreLink key={slug} href={`/${slug}`} variant="underlined">
-                {getSpecialtyText(slug)}
+                {getSpecialtyTitle(slug)}
               </CoreLink>
             ))}
         </div>

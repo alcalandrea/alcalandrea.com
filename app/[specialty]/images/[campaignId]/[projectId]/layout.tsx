@@ -1,4 +1,4 @@
-import {getSpecialtyText, isSpecialty} from "@/app/[specialty]/functions"
+import {getSpecialtyTitle, isSpecialty} from "@/app/[specialty]/functions"
 import {Metadata} from "next"
 import {loadCampaignProjectImages} from "./functions"
 import {CampaignProjectImagesProps} from "./types"
@@ -18,7 +18,7 @@ export async function generateMetadata({
     })
     if (images.length > 0) {
       const metadata: Metadata = {
-        description: `${images[0].alt} from ${getSpecialtyText(specialty)}`,
+        description: `${images[0].alt} from ${getSpecialtyTitle(specialty)}`,
         openGraph: {
           images: [images[0]],
         },

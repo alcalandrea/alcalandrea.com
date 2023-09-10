@@ -13,7 +13,7 @@ export function isSpecialty(specialty: unknown): specialty is Specialty {
  * Converts a specialty to its display text
  * (eg. inbound-marketing -> Inbound Marketing)
  */
-export function getSpecialtyText(specialty: Specialty) {
+export function getSpecialtyTitle(specialty: Specialty) {
   return specialty.split("-").map(capitalize).join(" ")
 }
 

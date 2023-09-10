@@ -1,5 +1,5 @@
 import {specialties} from "./[specialty]/constants"
-import {getSpecialtyText} from "./[specialty]/functions"
+import {getSpecialtyTitle} from "./[specialty]/functions"
 import ContentWrapper from "./components/ContentWrapper"
 import CoreLink from "./components/CoreLink"
 
@@ -26,7 +26,7 @@ export default function HomePage() {
               href={specialty}
               key={specialty}
             >
-              {getSpecialtyText(specialty)}
+              {getSpecialtyTitle(specialty)}
             </CoreLink>
           ))}
         </div>
