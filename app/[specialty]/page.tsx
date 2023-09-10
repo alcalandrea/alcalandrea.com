@@ -3,7 +3,8 @@ import {redirect} from "next/navigation"
 import React from "react"
 import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
-import {getCampaigns, isSpecialty} from "./functions"
+import {specialties} from "./constants"
+import {getCampaigns, getSpecialtyText, isSpecialty} from "./functions"
 import {SpecialtyProps} from "./types"
 
 /**
@@ -108,6 +109,15 @@ export default async function SpecialtyPage({
             </div>
           </div>
         ))}
+        <div className="flex flex-wrap justify-center gap-6 px-6">
+          {specialties
+            .filter(s => s !== specialty)
+            .map(slug => (
+              <CoreLink key={slug} href={`/${slug}`} variant="underlined">
+                {getSpecialtyText(slug)}
+              </CoreLink>
+            ))}
+        </div>
         <CoreLink className="underline" href={`/${specialty}#top-of-page`}>
           Scroll to top
         </CoreLink>
