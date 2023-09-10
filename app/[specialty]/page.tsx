@@ -1,5 +1,5 @@
 import Image from "next/image"
-import {redirect} from "next/navigation"
+import {notFound} from "next/navigation"
 import React from "react"
 import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
@@ -13,9 +13,9 @@ import {SpecialtyProps} from "./types"
 export default async function SpecialtyPage({
   params: {specialty},
 }: SpecialtyProps) {
-  /* redirect home if the specialty param is invalid */
+  /* show the not found page if the specialty param is invalid */
   if (!isSpecialty(specialty)) {
-    redirect("/")
+    notFound()
   }
 
   /* load all campaigns for this specialty */
