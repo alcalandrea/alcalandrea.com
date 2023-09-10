@@ -2,7 +2,7 @@ import {isSpecialty} from "@/app/[specialty]/functions"
 import CoreLink from "@/app/components/CoreLink"
 import NavigateOnKeyup from "@/app/components/NavigateOnKeyup"
 import Image from "next/image"
-import {redirect} from "next/navigation"
+import {notFound} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
 import {CampaignProjectImagesProps} from "./types"
 
@@ -12,9 +12,9 @@ import {CampaignProjectImagesProps} from "./types"
 export default async function CampaignProjectImagesPage({
   params: {campaignId, projectId, specialty},
 }: CampaignProjectImagesProps) {
-  /* redirect home if the specialty is invalid */
+  /* show the not found page if the specialty param is invalid */
   if (!isSpecialty(specialty)) {
-    redirect("/")
+    notFound()
   }
 
   /* load all images which match the specialty, campaign, and project */
@@ -24,9 +24,9 @@ export default async function CampaignProjectImagesPage({
     specialty,
   })
 
-  /* redirect to the specialty page if there are no images */
+  /* show the not found page if there are no images */
   if (images.length === 0) {
-    redirect(`/${specialty}`)
+    notFound()
   }
 
   /* this is the route we will use for closing the page, which
