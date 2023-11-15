@@ -1,10 +1,30 @@
-import {isSpecialty} from "@/app/[specialty]/functions"
+import {specialties} from "@/app/[specialty]/constants"
+import {isSpecialty, loadCampaigns} from "@/app/[specialty]/functions"
 import CoreLink from "@/app/components/CoreLink"
 import NavigateOnKeyup from "@/app/components/NavigateOnKeyup"
 import Image from "next/image"
 import {notFound} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
 import {CampaignProjectImagesProps} from "./types"
+
+export async function generateStaticParams() {
+  const params: Array<CampaignProjectImagesProps["params"]> = []
+  for (const specialty of specialties) {
+    const campaigns = await loadCampaigns(specialty)
+    for (const campaign of campaigns) {
+      for (const project of campaign.projects) {
+        if (project.images.length > 1) {
+          params.push({
+            campaignId: campaign.id,
+            projectId: project.id,
+            specialty,
+          })
+        }
+      }
+    }
+  }
+  return params
+}
 
 /**
  * Displays all images from a campaign project in a scrollable gallery
