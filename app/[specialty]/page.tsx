@@ -7,6 +7,10 @@ import {specialties} from "./constants"
 import {getCampaigns, getSpecialtyTitle, isSpecialty} from "./functions"
 import {SpecialtyProps} from "./types"
 
+export function generateStaticParams() {
+  return specialties.map(specialty => ({specialty}))
+}
+
 /**
  * Dynamic page which displays all campaigns related to a specialty
  */
