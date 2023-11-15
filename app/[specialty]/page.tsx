@@ -7,6 +7,9 @@ import {specialties} from "./constants"
 import {getSpecialtyTitle, isSpecialty, loadCampaigns} from "./functions"
 import {SpecialtyProps} from "./types"
 
+/**
+ * Loads the content for each specialty at build time
+ */
 export function generateStaticParams() {
   return specialties.map(specialty => ({specialty}))
 }
