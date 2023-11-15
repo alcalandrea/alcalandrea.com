@@ -16,10 +16,6 @@ export async function generateMetadata() {
   return metadata
 }
 
-export default function SpecialtyLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function AboutLayout({children}: {children: React.ReactNode}) {
   return children
 }

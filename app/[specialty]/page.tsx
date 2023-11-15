@@ -4,8 +4,15 @@ import React from "react"
 import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
 import {specialties} from "./constants"
-import {getCampaigns, getSpecialtyTitle, isSpecialty} from "./functions"
+import {getSpecialtyTitle, isSpecialty, loadCampaigns} from "./functions"
 import {SpecialtyProps} from "./types"
+
+/**
+ * Loads the content for each specialty at build time
+ */
+export function generateStaticParams() {
+  return specialties.map(specialty => ({specialty}))
+}
 
 /**
  * Dynamic page which displays all campaigns related to a specialty
@@ -19,7 +26,7 @@ export default async function SpecialtyPage({
   }
 
   /* load all campaigns for this specialty */
-  const campaigns = await getCampaigns(specialty)
+  const campaigns = await loadCampaigns(specialty)
 
   return (
     <ContentWrapper>
