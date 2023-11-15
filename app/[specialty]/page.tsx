@@ -4,7 +4,7 @@ import React from "react"
 import ContentWrapper from "../components/ContentWrapper"
 import CoreLink from "../components/CoreLink"
 import {specialties} from "./constants"
-import {getCampaigns, getSpecialtyTitle, isSpecialty} from "./functions"
+import {getSpecialtyTitle, isSpecialty, loadCampaigns} from "./functions"
 import {SpecialtyProps} from "./types"
 
 export function generateStaticParams() {
@@ -23,7 +23,7 @@ export default async function SpecialtyPage({
   }
 
   /* load all campaigns for this specialty */
-  const campaigns = await getCampaigns(specialty)
+  const campaigns = await loadCampaigns(specialty)
 
   return (
     <ContentWrapper>

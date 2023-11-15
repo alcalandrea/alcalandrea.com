@@ -28,7 +28,7 @@ export function getCampaignKey(specialty: Specialty) {
 /**
  * Loads all campaigns related to a specialty
  */
-export function getCampaigns(specialty: Specialty) {
+export function loadCampaigns(specialty: Specialty) {
   const campaignKey = getCampaignKey(specialty)
   return makeDatoRequest<CampaignsResponse>({
     query: `
