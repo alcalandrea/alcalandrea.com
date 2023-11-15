@@ -24,8 +24,8 @@ export default async function CampaignProjectImagesPage({
     specialty,
   })
 
-  /* show the not found page if there are no images */
-  if (images.length === 0) {
+  /* show the not found page if there are less than two images */
+  if (images.length < 2) {
     notFound()
   }
 
