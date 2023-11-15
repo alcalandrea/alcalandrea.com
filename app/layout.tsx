@@ -1,10 +1,6 @@
 import classNames from "classnames"
 import type {Metadata} from "next"
 import {Mulish} from "next/font/google"
-import {specialties} from "./[specialty]/constants"
-import {getCampaigns} from "./[specialty]/functions"
-import {loadCampaignProjectImages} from "./[specialty]/images/[campaignId]/[projectId]/functions"
-import {loadAboutPageData} from "./about/functions"
 import "./globals.css"
 
 /* we will use this font globally by default */
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
  * Base layout which applies globally
  */
 export default function RootLayout({children}: {children: React.ReactNode}) {
-  loadStaticData()
-
   return (
     <html lang="en">
       <body
@@ -61,20 +55,4 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       </body>
     </html>
   )
-}
-
-async function loadStaticData() {
-  loadAboutPageData()
-  for (const specialty of specialties) {
-    const campaigns = await getCampaigns(specialty)
-    for (const campaign of campaigns) {
-      for (const project of campaign.projects) {
-        loadCampaignProjectImages({
-          campaignId: campaign.id,
-          projectId: project.id,
-          specialty,
-        })
-      }
-    }
-  }
 }
