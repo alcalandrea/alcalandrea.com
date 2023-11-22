@@ -16,6 +16,7 @@ export async function generateMetadata({
       projectId,
       specialty,
     })
+    /* valid image galleries contain at least two images */
     if (images.length > 1) {
       const metadata: Metadata = {
         description: `${images[0].alt} from ${getSpecialtyTitle(specialty)}`,
