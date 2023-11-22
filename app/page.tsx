@@ -1,7 +1,7 @@
 import {specialties} from "./[specialty]/constants"
 import {getSpecialtyTitle} from "./[specialty]/functions"
-import ContentWrapper from "./components/ContentWrapper"
-import CoreLink from "./components/CoreLink"
+import {CoreLink} from "./components/CoreLink"
+import {PageWrapper} from "./components/PageWrapper"
 
 /**
  * The site's main landing page, which contains a brief
@@ -9,7 +9,7 @@ import CoreLink from "./components/CoreLink"
  */
 export default function HomePage() {
   return (
-    <ContentWrapper>
+    <PageWrapper>
       <main className="flex flex-col items-center gap-20 px-4 text-center">
         <div>
           <h1 className="text-xl font-bold sm:text-2xl lg:text-3xl">
@@ -31,6 +31,6 @@ export default function HomePage() {
           ))}
         </div>
       </main>
-    </ContentWrapper>
+    </PageWrapper>
   )
 }

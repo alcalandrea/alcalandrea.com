@@ -9,7 +9,7 @@ const dosis = Dosis({subsets: ["latin"], weight: ["500", "700", "800"]})
  * A basic link to an internal or external route. Can
  * be styled by passing a variant and/or a className
  */
-export default function CoreLink({
+export function CoreLink({
   children,
   className,
   href,

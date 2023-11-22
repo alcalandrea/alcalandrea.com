@@ -1,5 +1,5 @@
 "use client"
-import CoreLink from "./components/CoreLink"
+import {CoreLink} from "./components/CoreLink"
 
 /**
  * Generic error page when route throws an error

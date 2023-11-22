@@ -1,4 +1,4 @@
-import CoreLink from "./components/CoreLink"
+import {CoreLink} from "./components/CoreLink"
 
 /**
  * Generic 404 page when route does not return content

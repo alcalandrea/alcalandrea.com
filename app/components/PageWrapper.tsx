@@ -1,14 +1,10 @@
 import Image from "next/image"
-import CoreLink from "./CoreLink"
+import {CoreLink} from "./CoreLink"
 
 /**
  * A wrapper which includes the site's header and footer
  */
-export default function ContentWrapper({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export function PageWrapper({children}: {children: React.ReactNode}) {
   return (
     <>
       <div>
