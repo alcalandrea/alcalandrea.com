@@ -28,6 +28,11 @@ export default async function SpecialtyPage({
   /* load all campaigns for this specialty */
   const campaigns = await loadCampaigns(specialty)
 
+  /* find the ID of the first project (if any) which has one or more images */
+  const firstImageProjectId = campaigns
+    .find(c => c.projects.some(p => p.images.length > 0))
+    ?.projects.find(p => p.images.length > 0)?.id
+
   return (
     <ContentWrapper>
       <main className="flex flex-col items-center justify-center gap-20 px-6 text-center">
@@ -41,16 +46,7 @@ export default async function SpecialtyPage({
             </h1>
             <div className="flex max-w-screen-sm flex-col gap-6">
               {campaign.projects.map(
-                ({
-                  id,
-                  images,
-                  index,
-                  linkUrl,
-                  linkText,
-                  subtitle,
-                  text,
-                  title,
-                }) => (
+                ({id, images, linkText, linkUrl, subtitle, text, title}) => (
                   <React.Fragment key={id}>
                     {title && (
                       <h2 className="text-lg font-bold sm:text-xl lg:text-2xl">
@@ -97,7 +93,9 @@ export default async function SpecialtyPage({
                         <Image
                           alt={images[0].alt}
                           height={images[0].height}
-                          priority={index === 0}
+                          /* the image needs the priority prop only if this is
+                          the first project which contains one or more images */
+                          priority={id === firstImageProjectId}
                           src={images[0].url}
                           title={images[0].title || images[0].alt}
                           width={images[0].width}
