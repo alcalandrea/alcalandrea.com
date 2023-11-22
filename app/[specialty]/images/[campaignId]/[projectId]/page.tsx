@@ -16,6 +16,7 @@ export async function generateStaticParams() {
     const campaigns = await loadCampaigns(specialty)
     for (const campaign of campaigns) {
       for (const project of campaign.projects) {
+        /* valid image galleries contain at least two images */
         if (project.images.length > 1) {
           params.push({
             campaignId: campaign.id,
