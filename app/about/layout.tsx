@@ -5,13 +5,13 @@ import {loadAboutPageData} from "./functions"
  * Generates metadata for the about page
  */
 export async function generateMetadata() {
-  const {image} = await loadAboutPageData()
+  const {image, title} = await loadAboutPageData()
   const metadata: Metadata = {
     description: "Brief biography of Andrea Alcala Vasquez",
     openGraph: {
       images: [image],
     },
-    title: "About Me",
+    title,
   }
   return metadata
 }
