@@ -3,7 +3,7 @@ import {CoreLink} from "./components/CoreLink"
 /**
  * Generic 404 page when route does not return content
  */
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
     <div className="grid h-screen p-6">
       <div className="flex flex-col justify-center gap-10 text-center">
