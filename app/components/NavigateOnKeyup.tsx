@@ -10,7 +10,7 @@ export function NavigateOnKeyup({
   route,
 }: {
   keyName: string
-  route: string
+  route: `/${string}`
 }) {
   const router = useRouter()
   useKeyup(keyName, () => router.push(route))

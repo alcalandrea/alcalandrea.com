@@ -54,7 +54,7 @@ export default async function CampaignProjectImagesPage({
 
   /* this is the route we will use for closing the page, which
   shows the specialty page with this first image at the top */
-  const route = `/${specialty}#${projectId}`
+  const route = `/${specialty}#${projectId}` as const
 
   return (
     <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-slate-900">
