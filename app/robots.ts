@@ -1,7 +1,7 @@
 import {MetadataRoute} from "next"
 
 /**
- * Generates robots.txt file for this app
+ * Generates robots.txt file for this site
  */
 export default function robots(): MetadataRoute.Robots {
   return {

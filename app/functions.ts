@@ -1,4 +1,11 @@
 /**
+ * Capitalizes the first letter of a string and makes the rest of it lowercase
+ */
+export function capitalize(s: string) {
+  return s ? s[0].toUpperCase() + s.slice(1).toLowerCase() : ""
+}
+
+/**
  * Requests data from the CMS which matches the query it receives
  */
 export async function makeDatoRequest<T>({
@@ -21,9 +28,7 @@ export async function makeDatoRequest<T>({
       revalidate: 3600,
     },
   })
-
   const responseBody = await response.json()
-
   if (!response.ok) {
     throw Error(
       `${response.status} ${response.statusText}: ${JSON.stringify(
@@ -31,13 +36,5 @@ export async function makeDatoRequest<T>({
       )}`,
     )
   }
-
   return Object.values(responseBody.data)[0] as T
-}
-
-/**
- * Capitalizes the first letter of a string and makes the rest of it lowercase
- */
-export function capitalize(s: string) {
-  return s ? s[0].toUpperCase() + s.slice(1).toLowerCase() : ""
 }

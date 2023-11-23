@@ -5,12 +5,12 @@ import {useKeyup} from "../hooks"
 /**
  * Redirects the user to the specified route if they press the specified key
  */
-export default function NavigateOnKeyup({
+export function NavigateOnKeyup({
   keyName,
   route,
 }: {
   keyName: string
-  route: string
+  route: `/${string}`
 }) {
   const router = useRouter()
   useKeyup(keyName, () => router.push(route))

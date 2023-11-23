@@ -1,7 +1,7 @@
 import {specialties} from "@/app/[specialty]/constants"
 import {isSpecialty, loadCampaigns} from "@/app/[specialty]/functions"
-import CoreLink from "@/app/components/CoreLink"
-import NavigateOnKeyup from "@/app/components/NavigateOnKeyup"
+import {CoreLink} from "@/app/components/CoreLink"
+import {NavigateOnKeyup} from "@/app/components/NavigateOnKeyup"
 import Image from "next/image"
 import {notFound} from "next/navigation"
 import {loadCampaignProjectImages} from "./functions"
@@ -16,6 +16,7 @@ export async function generateStaticParams() {
     const campaigns = await loadCampaigns(specialty)
     for (const campaign of campaigns) {
       for (const project of campaign.projects) {
+        /* valid image galleries contain at least two images */
         if (project.images.length > 1) {
           params.push({
             campaignId: campaign.id,
@@ -54,7 +55,7 @@ export default async function CampaignProjectImagesPage({
 
   /* this is the route we will use for closing the page, which
   shows the specialty page with this first image at the top */
-  const route = `/${specialty}#${projectId}`
+  const route = `/${specialty}#${projectId}` as const
 
   return (
     <main className="flex h-screen w-screen justify-center bg-gray-100 dark:bg-slate-900">
@@ -67,7 +68,7 @@ export default async function CampaignProjectImagesPage({
         href={route}
       >
         <Image
-          alt="X icon"
+          alt="Close icon"
           className="rounded-md"
           height={28}
           src="/x.svg"

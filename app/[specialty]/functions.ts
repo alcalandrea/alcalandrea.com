@@ -22,7 +22,7 @@ export function getSpecialtyTitle(specialty: Specialty) {
  * specialty (eg. inbound-marketing -> allInboundCampaigns)
  */
 export function getCampaignKey(specialty: Specialty) {
-  return `all${capitalize(specialty.split("-")[0])}Campaigns`
+  return `all${capitalize(specialty.split("-")[0])}Campaigns` as const
 }
 
 /**

@@ -13,7 +13,9 @@ export async function generateMetadata({params: {specialty}}: SpecialtyProps) {
       description: `${title} campaigns led by Andrea Alcala Vasquez, including ${campaigns[0].title}`,
       keywords: [title, ...campaigns.map(c => c.title)],
       openGraph: {
-        images: campaigns[0].projects.find(p => p.images.length > 0)?.images[0],
+        images: campaigns
+          .find(c => c.projects.some(p => p.images.length > 0))
+          ?.projects.find(p => p.images.length > 0)?.images[0],
       },
       title,
     }
