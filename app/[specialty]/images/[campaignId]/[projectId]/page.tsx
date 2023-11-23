@@ -68,7 +68,7 @@ export default async function CampaignProjectImagesPage({
         href={route}
       >
         <Image
-          alt="X icon"
+          alt="Close icon"
           className="rounded-md"
           height={28}
           src="/x.svg"
