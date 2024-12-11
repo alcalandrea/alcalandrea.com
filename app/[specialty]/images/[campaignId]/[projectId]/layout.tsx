@@ -7,9 +7,9 @@ import {CampaignProjectImagesProps} from "./types"
  * Generates metadata which corresponds to the images
  * from the selected specialty, campaign, and project
  */
-export async function generateMetadata({
-  params: {campaignId, projectId, specialty},
-}: CampaignProjectImagesProps) {
+export async function generateMetadata({params}: CampaignProjectImagesProps) {
+  const {campaignId, projectId, specialty} = await params
+
   if (isSpecialty(specialty)) {
     const images = await loadCampaignProjectImages({
       campaignId,

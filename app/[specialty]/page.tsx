@@ -10,16 +10,18 @@ import {SpecialtyProps} from "./types"
 /**
  * Loads the content for each specialty at build time
  */
-export function generateStaticParams() {
+export function generateStaticParams(): Array<
+  Awaited<SpecialtyProps["params"]>
+> {
   return specialties.map(specialty => ({specialty}))
 }
 
 /**
  * Dynamic page which displays all campaigns related to a specialty
  */
-export default async function SpecialtyPage({
-  params: {specialty},
-}: SpecialtyProps) {
+export default async function SpecialtyPage({params}: SpecialtyProps) {
+  const {specialty} = await params
+
   /* show the not found page if the specialty param is invalid */
   if (!isSpecialty(specialty)) {
     notFound()

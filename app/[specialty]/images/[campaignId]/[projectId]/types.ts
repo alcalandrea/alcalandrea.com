@@ -15,9 +15,9 @@ export type CampaignProjectImagesResponse = Array<{
  * The props which can be accessed from within this module
  */
 export type CampaignProjectImagesProps = {
-  params: {
+  params: Promise<{
     campaignId: string
     projectId: string
     specialty: string
-  }
+  }>
 }

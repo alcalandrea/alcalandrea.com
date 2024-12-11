@@ -5,7 +5,9 @@ import {SpecialtyProps} from "./types"
 /**
  * Generates metadata which corresponds to the specialty
  */
-export async function generateMetadata({params: {specialty}}: SpecialtyProps) {
+export async function generateMetadata({params}: SpecialtyProps) {
+  const {specialty} = await params
+
   if (isSpecialty(specialty)) {
     const title = getSpecialtyTitle(specialty)
     const campaigns = await loadCampaigns(specialty)
