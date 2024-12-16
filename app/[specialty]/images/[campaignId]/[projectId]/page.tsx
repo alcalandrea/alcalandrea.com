@@ -11,7 +11,7 @@ import {CampaignProjectImagesProps} from "./types"
  * Loads all image galleries at build time
  */
 export async function generateStaticParams() {
-  const params: Array<CampaignProjectImagesProps["params"]> = []
+  const params: Array<Awaited<CampaignProjectImagesProps["params"]>> = []
   for (const specialty of specialties) {
     const campaigns = await loadCampaigns(specialty)
     for (const campaign of campaigns) {
@@ -34,8 +34,10 @@ export async function generateStaticParams() {
  * Displays all images from a campaign project in a scrollable gallery
  */
 export default async function CampaignProjectImagesPage({
-  params: {campaignId, projectId, specialty},
+  params,
 }: CampaignProjectImagesProps) {
+  const {campaignId, projectId, specialty} = await params
+
   /* show the not found page if the specialty param is invalid */
   if (!isSpecialty(specialty)) {
     notFound()

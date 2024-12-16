@@ -76,7 +76,9 @@ function Footer() {
         </CoreLink>
         .
       </p>
-      <p>Copyright © {new Date().getFullYear()} | Andrea Alcala Vasquez</p>
+      <p>
+        Copyright © 2023-{new Date().getFullYear()} | Andrea Alcala Vasquez
+      </p>
     </footer>
   )
 }

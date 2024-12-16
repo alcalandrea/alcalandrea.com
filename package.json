@@ -1,28 +1,32 @@
 {
   "dependencies": {
     "@types/node": "20.5.1",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "autoprefixer": "10.4.15",
     "classnames": "^2.3.2",
     "eslint": "8.47.0",
-    "eslint-config-next": "13.4.19",
+    "eslint-config-next": "15.1.0",
     "eslint-config-prettier": "^9.0.0",
-    "next": "13.4.19",
+    "next": "15.1.0",
     "postcss": "8.4.28",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },
   "name": "andrea.com",
   "private": true,
+  "resolutions": {
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2"
+  },
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "lint": "next lint && prettier --write --ignore-path .gitignore .",
     "start": "next start"
   },

@@ -30,5 +30,5 @@ export type CampaignsResponse = Array<{
  * The props which can be accessed from within this module
  */
 export type SpecialtyProps = {
-  params: {specialty: string}
+  params: Promise<{specialty: string}>
 }
