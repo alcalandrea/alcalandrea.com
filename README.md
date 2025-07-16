@@ -24,8 +24,8 @@ You can add NVM by following the instructions at
 Clone the repo onto your machine and cd into it:
 
 ```
-git clone https://github.com/alcalandrea/andrea.com.git
-cd andrea.com
+git clone https://github.com/alcalandrea/alcalandrea.com.git
+cd alcalandrea.com
 ```
 
 Get the latest recommended version of Node.js (stored in `.nvmrc`):
