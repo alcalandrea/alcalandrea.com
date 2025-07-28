@@ -18,7 +18,7 @@
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },
-  "name": "andrea.com",
+  "name": "alcalandrea.com",
   "private": true,
   "resolutions": {
     "@types/react": "19.0.1",
