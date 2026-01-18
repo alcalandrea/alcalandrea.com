@@ -1,0 +1,12 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "workbench.editor.customLabels.patterns": {
+    "**/layout.tsx": "${dirname} layout",
+    "**/page.tsx": "${dirname} page"
+  }
+}
