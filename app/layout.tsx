@@ -48,7 +48,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
                 {/* Logo */}
                 <div className="flex shrink-0 items-center">
                   <Link
-                    className="text-2xl font-bold tracking-tight text-[#8e3219]"
+                    className="text-2xl font-bold tracking-tight text-primary hover:text-secondary"
                     href="/"
                   >
                     Andrea <span className="font-light">Alcala Vasquez</span>
@@ -58,25 +58,25 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
                 {/* Desktop Menu */}
                 <div className="hidden items-center space-x-8 md:flex">
                   <Link
-                    className="text-gray-600 transition-colors hover:text-[#b5563e]"
+                    className="text-gray-600 transition-colors hover:text-secondary"
                     href="/#"
                   >
                     About
                   </Link>
                   <Link
-                    className="text-gray-600 transition-colors hover:text-[#b5563e]"
+                    className="text-gray-600 transition-colors hover:text-secondary"
                     href="/#expertise"
                   >
                     Expertise
                   </Link>
                   <Link
-                    className="text-gray-600 transition-colors hover:text-[#b5563e]"
+                    className="text-gray-600 transition-colors hover:text-secondary"
                     href="/#work"
                   >
                     Work
                   </Link>
                   <a
-                    className="transform rounded-full bg-[#b5563e] px-6 py-2.5 font-semibold text-white shadow-lg shadow-[#8e3219]/20 transition-all hover:-translate-y-0.5 hover:bg-[#8e3219]"
+                    className="transform rounded-full bg-secondary px-6 py-2.5 font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5"
                     href="mailto:alcalandrea@gmail.com"
                   >
                     Let&apos;s Connect
@@ -87,7 +87,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
                 <div className="flex items-center md:hidden">
                   <label
                     htmlFor="mobile-menu-toggle"
-                    className="cursor-pointer p-2 text-gray-600 transition-colors hover:text-[#b5563e]"
+                    className="cursor-pointer p-2 text-gray-600 transition-colors hover:text-secondary"
                   >
                     {/* Hamburger (Default Visible) */}
                     <Menu className="menu-icon block" size={28} />
@@ -122,7 +122,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
                   Work
                 </Link>
                 <a
-                  className="mt-4 flex w-full justify-center rounded-md bg-[#b5563e] px-6 py-3 font-medium text-white transition-colors hover:bg-[#8e3219]"
+                  className="mt-4 flex w-full justify-center rounded-md bg-secondary px-6 py-3 font-medium text-white transition-colors hover:bg-primary"
                   href="mailto:alcalandrea@gmail.com"
                 >
                   Let&apos;s Connect
@@ -134,7 +134,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           {children}
 
           {/* Footer */}
-          <footer className="bg-[#8e3219] py-20 text-white">
+          <footer className="bg-primary py-20 text-white">
             <div className="mx-auto max-w-4xl px-4 text-center">
               <h2 className="mb-6 text-3xl font-bold lg:text-4xl">
                 Ready to integrate your efforts?
@@ -147,7 +147,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 
               <div className="mb-16 flex flex-col items-center justify-center gap-6 sm:flex-row">
                 <a
-                  className="rounded-full bg-[#b5563e] px-10 py-4 font-bold text-white transition-all duration-200 hover:bg-white hover:text-[#8e3219]"
+                  className="rounded-full bg-white px-10 py-4 font-bold text-secondary transition-all duration-200 hover:-translate-y-0.5"
                   href="mailto:alcalandrea@gmail.com"
                 >
                   Email Me

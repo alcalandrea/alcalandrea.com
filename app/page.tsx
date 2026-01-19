@@ -16,9 +16,9 @@ export default function RootPage() {
           <div className="flex items-center justify-between gap-10">
             {/* Text Content */}
             <div>
-              <h1 className="mb-6 text-6xl leading-tight font-bold text-[#8e3219]">
+              <h1 className="mb-6 text-6xl leading-tight font-bold text-primary">
                 Connecting the Dots. <br />
-                <span className="text-[#b5563e]">Driving Results.</span>
+                <span className="text-secondary">Driving Results.</span>
               </h1>
               <p className="mb-8 max-w-lg text-xl leading-relaxed text-gray-600">
                 I&apos;m Andrea, an Integrated Marketing Strategist. I bridge
@@ -27,16 +27,16 @@ export default function RootPage() {
               </p>
               <div className="flex flex-col gap-4 text-center sm:flex-row">
                 <a
-                  className="rounded-full bg-[#8e3219] px-8 py-4 font-semibold text-white shadow-lg shadow-[#8e3219]/20 transition-colors hover:bg-[#b5563e]"
+                  className="rounded-full bg-secondary px-8 py-4 font-semibold text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary"
                   href="#work"
                 >
                   Featured Projects
                 </a>
                 <a
-                  className="rounded-full border-2 border-[#8e3219] bg-white px-8 py-4 font-semibold text-[#8e3219] transition-colors hover:bg-[#aa7f62]/10"
+                  className="rounded-full border-2 border-secondary bg-white px-8 py-4 font-semibold text-secondary transition-colors hover:bg-secondary/5"
                   href="#expertise"
                 >
-                  Core Competencies
+                  Core Philosophy
                 </a>
               </div>
             </div>
@@ -44,7 +44,7 @@ export default function RootPage() {
             {/* Hero Image */}
             <div className="max-lg:w-50 max-lg:shrink-0 max-md:hidden">
               {/* Decorative Blob */}
-              <div className="absolute top-0 right-0 -z-10 h-full w-full translate-x-10 -translate-y-10 transform rounded-full bg-[#5db1e7]/10 blur-3xl"></div>
+              <div className="absolute top-0 right-0 -z-10 h-full w-full translate-x-10 -translate-y-10 transform rounded-full bg-blue/10 blur-3xl"></div>
               <div className="overflow-hidden rounded-2xl border-4 border-white shadow-2xl lg:relative">
                 <Image
                   alt="Andrea - Integrated Marketing Strategist"
@@ -54,8 +54,8 @@ export default function RootPage() {
                   width={900}
                 />
                 {/* Floating Badge */}
-                <div className="bottom-6 left-6 rounded-lg border-[#8ea048] bg-white/90 px-6 py-4 shadow-lg backdrop-blur lg:absolute lg:border-l-4">
-                  <p className="font-bold text-[#8e3219]">10+ Years</p>
+                <div className="bottom-6 left-6 rounded-lg border-primary bg-white/90 px-6 py-4 shadow-lg backdrop-blur lg:absolute lg:border-l-4">
+                  <p className="font-bold text-primary">10+ Years</p>
                   <p className="text-sm text-gray-600">Driving Growth</p>
                 </div>
               </div>
@@ -67,14 +67,14 @@ export default function RootPage() {
       {/* Philosophy Section */}
       <section className="bg-[#aa7f62]/10 py-20" id="philosophy">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-6 text-3xl font-bold text-[#8e3219]">
+          <h2 className="mb-6 text-3xl font-bold text-primary">
             Marketing isn&apos;t a checklist. It&apos;s an ecosystem.
           </h2>
           <p className="text-xl leading-relaxed text-gray-700">
             Too often, brands treat channels in silos—SEO over here, social
             media over there, and email somewhere in between. As an Integrated
             Marketing Strategist,{" "}
-            <span className="font-semibold text-[#b5563e]">
+            <span className="font-semibold text-secondary">
               I harmonize these efforts.
             </span>{" "}
             I ensure your brand message is consistent, your strategy is
@@ -88,10 +88,10 @@ export default function RootPage() {
       <section className="bg-white py-24" id="expertise">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
-            <h2 className="mb-3 text-sm font-bold tracking-widest text-[#5db1e7] uppercase">
+            <h2 className="mb-3 text-sm font-bold tracking-widest text-blue uppercase">
               Expertise
             </h2>
-            <h3 className="text-3xl font-bold text-[#8e3219] lg:text-4xl">
+            <h3 className="text-3xl font-bold text-primary lg:text-4xl">
               My Integrated Toolkit
             </h3>
           </div>
@@ -102,7 +102,7 @@ export default function RootPage() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-[#8ea048]/10 text-[#8ea048] transition-colors group-hover:bg-[#8ea048] group-hover:text-white">
                 <Compass size={28} />
               </div>
-              <h4 className="mb-3 text-xl font-bold text-[#8e3219]">
+              <h4 className="mb-3 text-xl font-bold text-primary">
                 Brand & Strategy
               </h4>
               <p className="leading-relaxed text-gray-600">
@@ -117,7 +117,7 @@ export default function RootPage() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-[#8ea048]/10 text-[#8ea048] transition-colors group-hover:bg-[#8ea048] group-hover:text-white">
                 <PenTool size={28} />
               </div>
-              <h4 className="mb-3 text-xl font-bold text-[#8e3219]">
+              <h4 className="mb-3 text-xl font-bold text-primary">
                 Content Marketing
               </h4>
               <p className="leading-relaxed text-gray-600">
@@ -131,7 +131,7 @@ export default function RootPage() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-[#8ea048]/10 text-[#8ea048] transition-colors group-hover:bg-[#8ea048] group-hover:text-white">
                 <Megaphone size={28} />
               </div>
-              <h4 className="mb-3 text-xl font-bold text-[#8e3219]">
+              <h4 className="mb-3 text-xl font-bold text-primary">
                 Digital & Demand Gen
               </h4>
               <p className="leading-relaxed text-gray-600">
@@ -145,7 +145,7 @@ export default function RootPage() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-[#8ea048]/10 text-[#8ea048] transition-colors group-hover:bg-[#8ea048] group-hover:text-white">
                 <BarChart3 size={28} />
               </div>
-              <h4 className="mb-3 text-xl font-bold text-[#8e3219]">
+              <h4 className="mb-3 text-xl font-bold text-primary">
                 Analytics & ROI
               </h4>
               <p className="leading-relaxed text-gray-600">
@@ -160,30 +160,30 @@ export default function RootPage() {
       {/* Featured Work */}
       <section className="bg-gray-50 py-24" id="work">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-3xl font-bold text-[#8e3219] lg:text-4xl">
+          <h2 className="mb-12 text-3xl font-bold text-primary lg:text-4xl">
             Featured Projects
           </h2>
 
           <div className="grid gap-10 md:grid-cols-2">
             {/* Project 1 */}
             <div className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
-              <div className="relative h-64 bg-gray-200">
+              <div className="relative bg-gray-200">
                 <Image
                   alt="B2B Tech Launch"
-                  className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                  height={400}
-                  src="https://picsum.photos/800/400"
-                  width={800}
+                  className="h-full w-full object-cover object-top-left grayscale transition-all duration-500 group-hover:grayscale-0"
+                  height={600}
+                  src="/clearspaces.png"
+                  width={960}
                 />
-                <div className="absolute top-4 right-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-[#5db1e7] uppercase">
-                  B2B Tech
+                <div className="absolute right-4 bottom-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-blue uppercase">
+                  Design/Build
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="mb-2 text-2xl font-bold text-[#8e3219]">
+                <h3 className="mb-2 text-2xl font-bold text-primary">
                   The B2B Tech Launch
                 </h3>
-                <p className="mb-4 text-sm font-semibold text-[#b5563e]">
+                <p className="mb-4 text-sm font-semibold text-secondary">
                   Role: Lead Strategist
                 </p>
                 <p className="mb-6 text-gray-600">
@@ -195,7 +195,7 @@ export default function RootPage() {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center font-bold text-[#8e3219] transition-colors hover:text-[#b5563e]"
+                  className="inline-flex items-center font-bold text-primary transition-colors hover:text-secondary"
                 >
                   View Case Study <ArrowRight size={16} className="ml-2" />
                 </a>
@@ -204,23 +204,23 @@ export default function RootPage() {
 
             {/* Project 2 */}
             <div className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
-              <div className="relative h-64 bg-gray-200">
+              <div className="relative bg-gray-200">
                 <Image
                   alt="Ecommerce Rebrand"
                   className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                  height={400}
-                  src="https://picsum.photos/800/401"
-                  width={800}
+                  height={600}
+                  src="/workast.webp"
+                  width={960}
                 />
-                <div className="absolute top-4 right-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-[#5db1e7] uppercase">
-                  E-Commerce
+                <div className="absolute right-4 bottom-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-blue uppercase">
+                  B2B/B2C SaaS
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="mb-2 text-2xl font-bold text-[#8e3219]">
+                <h3 className="mb-2 text-2xl font-bold text-primary">
                   The E-commerce Rebrand
                 </h3>
-                <p className="mb-4 text-sm font-semibold text-[#b5563e]">
+                <p className="mb-4 text-sm font-semibold text-secondary">
                   Role: Campaign Manager
                 </p>
                 <p className="mb-6 text-gray-600">
@@ -231,7 +231,7 @@ export default function RootPage() {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center font-bold text-[#8e3219] transition-colors hover:text-[#b5563e]"
+                  className="inline-flex items-center font-bold text-primary transition-colors hover:text-secondary"
                 >
                   View Case Study <ArrowRight size={16} className="ml-2" />
                 </a>
@@ -244,11 +244,11 @@ export default function RootPage() {
       {/* Social Proof */}
       <section className="relative overflow-hidden bg-white py-24">
         {/* Background element */}
-        <div className="absolute top-0 left-0 h-32 w-32 -translate-x-10 -translate-y-10 rounded-full bg-[#5db1e7]/10 blur-2xl"></div>
+        <div className="absolute top-0 left-0 h-32 w-32 -translate-x-10 -translate-y-10 rounded-full bg-blue/10 blur-2xl"></div>
         <div className="absolute right-0 bottom-0 h-64 w-64 translate-x-20 translate-y-20 rounded-full bg-[#aa7f62]/10 blur-3xl"></div>
 
-        <div className="relative z-10 mx-auto max-w-235 px-6 text-center">
-          <div className="mb-6 flex justify-center text-[#b5563e]">
+        <div className="relative z-10 mx-auto max-w-205 px-6 text-center">
+          <div className="mb-6 flex justify-center text-secondary">
             <svg
               fill="currentColor"
               height="40"
@@ -262,7 +262,7 @@ export default function RootPage() {
               />
             </svg>
           </div>
-          <blockquote className="mb-8 text-lg leading-relaxed font-medium text-[#8e3219]">
+          <blockquote className="mb-8 text-lg leading-relaxed font-medium text-primary">
             <span className="text-3xl">
               Andrea has a rare combination of talents
             </span>{" "}
