@@ -51,7 +51,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
                     className="text-2xl font-bold tracking-tight text-primary hover:text-secondary"
                     href="/"
                   >
-                    Andrea <span className="font-light">Alcala Vasquez</span>
+                    Andrea
+                    <span className="font-light">&nbsp;Alcala Vasquez</span>
                   </Link>
                 </div>
 

@@ -6,6 +6,7 @@ import {
   PenTool,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function RootPage() {
   return (
@@ -18,7 +19,7 @@ export default function RootPage() {
             <div>
               <h1 className="mb-6 text-6xl leading-tight font-bold text-primary">
                 Connecting the Dots. <br />
-                <span className="text-secondary">Driving Results.</span>
+                <span className="text-secondary">Delivering Results.</span>
               </h1>
               <p className="mb-8 max-w-lg text-xl leading-relaxed text-gray-600">
                 I&apos;m Andrea, an Integrated Marketing Strategist. I bridge
@@ -27,13 +28,13 @@ export default function RootPage() {
               </p>
               <div className="flex flex-col gap-4 text-center sm:flex-row">
                 <a
-                  className="rounded-full bg-secondary px-8 py-4 font-semibold text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary"
+                  className="flex justify-center rounded-full bg-secondary px-8 py-4 font-semibold text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary"
                   href="#work"
                 >
                   Featured Projects
                 </a>
                 <a
-                  className="rounded-full border-2 border-secondary bg-white px-8 py-4 font-semibold text-secondary transition-colors hover:bg-secondary/5"
+                  className="flex justify-center rounded-full border-2 border-secondary bg-white px-8 py-4 font-semibold text-secondary transition-colors hover:bg-secondary/5"
                   href="#expertise"
                 >
                   Core Philosophy
@@ -49,9 +50,9 @@ export default function RootPage() {
                 <Image
                   alt="Andrea - Integrated Marketing Strategist"
                   className="h-auto w-full object-cover"
-                  height={950}
+                  height={500}
                   src="/andrea.jpeg"
-                  width={900}
+                  width={500}
                 />
                 {/* Floating Badge */}
                 <div className="bottom-6 left-6 rounded-lg border-primary bg-white/90 px-6 py-4 shadow-lg backdrop-blur lg:absolute lg:border-l-4">
@@ -166,77 +167,84 @@ export default function RootPage() {
 
           <div className="grid gap-10 md:grid-cols-2">
             {/* Project 1 */}
-            <div className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
-              <div className="relative bg-gray-200">
-                <Image
-                  alt="B2B Tech Launch"
-                  className="h-full w-full object-cover object-top-left grayscale transition-all duration-500 group-hover:grayscale-0"
-                  height={600}
-                  src="/clearspaces.png"
-                  width={960}
-                />
-                <div className="absolute right-4 bottom-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-blue uppercase">
-                  Design/Build
+            <Link href="/clearspace">
+              <div className="group block overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
+                <div className="relative bg-gray-200">
+                  <Image
+                    alt="Clearspace homepage"
+                    className="h-full w-full object-cover object-top-left grayscale transition-all duration-500 group-hover:grayscale-0"
+                    height={600}
+                    src="/clearspaces.png"
+                    width={960}
+                  />
+                  <div className="absolute right-4 bottom-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-blue uppercase">
+                    Design-Build
+                  </div>
+                </div>
+
+                <div className="p-8">
+                  <h3 className="mb-2 text-2xl font-bold text-primary">
+                    Marketing Built From Zero
+                  </h3>
+
+                  <p className="mb-4 text-sm font-semibold text-secondary">
+                    Role: Marketing Manager
+                  </p>
+
+                  <p className="mb-6 text-gray-600">
+                    Built scalable marketing systems driving triple-digit growth
+                    and{" "}
+                    <span className="font-bold text-gray-900">
+                      $1M+ in identified project opportunities.
+                    </span>{" "}
+                  </p>
+
+                  <span className="inline-flex items-center font-bold text-primary transition-colors group-hover:text-secondary">
+                    View Case Study <ArrowRight size={16} className="ml-2" />
+                  </span>
                 </div>
               </div>
-              <div className="p-8">
-                <h3 className="mb-2 text-2xl font-bold text-primary">
-                  The B2B Tech Launch
-                </h3>
-                <p className="mb-4 text-sm font-semibold text-secondary">
-                  Role: Lead Strategist
-                </p>
-                <p className="mb-6 text-gray-600">
-                  Integrated content and LinkedIn ad strategy resulted in a{" "}
-                  <span className="font-bold text-gray-900">
-                    45% increase in qualified demo requests
-                  </span>{" "}
-                  in Q3.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center font-bold text-primary transition-colors hover:text-secondary"
-                >
-                  View Case Study <ArrowRight size={16} className="ml-2" />
-                </a>
-              </div>
-            </div>
+            </Link>
 
             {/* Project 2 */}
-            <div className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
-              <div className="relative bg-gray-200">
-                <Image
-                  alt="Ecommerce Rebrand"
-                  className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                  height={600}
-                  src="/workast.webp"
-                  width={960}
-                />
-                <div className="absolute right-4 bottom-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-blue uppercase">
-                  B2B/B2C SaaS
+            <Link href="/workast">
+              <div className="group block overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md">
+                <div className="relative bg-gray-200">
+                  <Image
+                    alt="Workast homepage"
+                    className="h-full w-full object-cover object-top-left grayscale transition-all duration-500 group-hover:grayscale-0"
+                    height={600}
+                    src="/workast.webp"
+                    width={960}
+                  />
+                  <div className="absolute right-4 bottom-4 rounded bg-white/90 px-3 py-1 text-xs font-bold tracking-wider text-blue uppercase">
+                    B2B/B2C SaaS
+                  </div>
+                </div>
+
+                <div className="p-8">
+                  <h3 className="mb-2 text-2xl font-bold text-primary">
+                    Organic Inbound Growth Engine
+                  </h3>
+
+                  <p className="mb-4 text-sm font-semibold text-secondary">
+                    Role: Marketing Manager
+                  </p>
+
+                  <p className="mb-6 text-gray-600">
+                    Built a fully organic inbound engine scaling traffic, demand
+                    and leads with{" "}
+                    <span className="font-bold text-gray-900">
+                      zero paid acquisition.
+                    </span>{" "}
+                  </p>
+
+                  <span className="inline-flex items-center font-bold text-primary transition-colors group-hover:text-secondary">
+                    View Case Study <ArrowRight size={16} className="ml-2" />
+                  </span>
                 </div>
               </div>
-              <div className="p-8">
-                <h3 className="mb-2 text-2xl font-bold text-primary">
-                  The E-commerce Rebrand
-                </h3>
-                <p className="mb-4 text-sm font-semibold text-secondary">
-                  Role: Campaign Manager
-                </p>
-                <p className="mb-6 text-gray-600">
-                  Synchronized email, organic social, and influencer outreach
-                  drove{" "}
-                  <span className="font-bold text-gray-900">$120k revenue</span>{" "}
-                  during launch week.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center font-bold text-primary transition-colors hover:text-secondary"
-                >
-                  View Case Study <ArrowRight size={16} className="ml-2" />
-                </a>
-              </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -262,7 +270,8 @@ export default function RootPage() {
               />
             </svg>
           </div>
-          <blockquote className="mb-8 text-lg leading-relaxed font-medium text-primary">
+          <blockquote className="relative mb-8 px-4 text-lg leading-relaxed font-medium text-primary">
+            <span className="absolute -top-7 -left-3 text-7xl">&ldquo;</span>
             <span className="text-3xl">
               Andrea has a rare combination of talents
             </span>{" "}
@@ -275,11 +284,14 @@ export default function RootPage() {
             <span className="text-2xl">
               I&apos;d work with her again given the chance.
             </span>
+            <span className="absolute -right-3 -bottom-14 text-7xl">
+              &rdquo;
+            </span>
           </blockquote>
           <div className="flex justify-center">
             <a
               className="group"
-              href="https://www.linkedin.com/in/dallaskachan"
+              href="https://www.linkedin.com/in/dallaskachan/"
               rel="noopener"
               target="_blank"
             >
