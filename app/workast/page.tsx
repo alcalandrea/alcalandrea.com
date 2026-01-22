@@ -8,7 +8,12 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Workast Case Study",
+};
 
 export default function WorkastPage() {
   return (

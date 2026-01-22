@@ -15,10 +15,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  description:
-    "Personal website of Integrated Marketing Strategist" +
-    " Andrea Alcala Vasquez",
-  title: "Andrea Alcala Vasquez",
+  applicationName: "Andrea Alcala Vasquez",
+  authors: [
+    {
+      name: "Andrea Alcala Vasquez",
+    },
+    {
+      name: "Max Monis",
+      url: "https://maxmonis.com",
+    },
+  ],
+  creator: "Andrea Alcala Vasquez",
+  description: "Integrated Marketing Strategist",
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  generator: "Next.js",
+  keywords: [
+    "Andrea Alcala",
+    "Andrea Vasquez",
+    "Andrea Alcala Vasquez",
+    "Andrea Alcala Toronto",
+    "Andrea Vasquez Toronto",
+    "Andrea Alcala Vasquez Toronto",
+    "Marketing Strategist Toronto",
+    "Marketing Manager Toronto",
+  ],
+  publisher: "Vercel",
+  referrer: "origin-when-cross-origin",
+  title: {
+    default: "Andrea Alcala Vasquez",
+    template: "%s | Andrea Alcala Vasquez",
+  },
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
