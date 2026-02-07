@@ -18,6 +18,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-background font-sans text-foreground;
 }

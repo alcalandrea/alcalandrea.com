@@ -172,7 +172,7 @@ export default function RootPage() {
                 <div className="relative bg-gray-200">
                   <Image
                     alt="Clearspace homepage"
-                    className="h-full w-full object-cover object-top-left grayscale transition-all duration-500 group-hover:grayscale-0"
+                    className="h-full w-full object-cover object-top-left transition-all duration-500 group-hover:grayscale-0 md:grayscale"
                     height={600}
                     src="/clearspaces.png"
                     width={960}
@@ -212,7 +212,7 @@ export default function RootPage() {
                 <div className="relative bg-gray-200">
                   <Image
                     alt="Workast homepage"
-                    className="h-full w-full object-cover object-top-left grayscale transition-all duration-500 group-hover:grayscale-0"
+                    className="h-full w-full object-cover object-top-left transition-all duration-500 group-hover:grayscale-0 md:grayscale"
                     height={600}
                     src="/workast.webp"
                     width={960}

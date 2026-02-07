@@ -133,7 +133,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
               Visible only when the peer input is checked
             */}
             <div className="absolute left-0 z-40 hidden w-full border-t border-gray-100 bg-white shadow-lg peer-checked:block md:hidden">
-              <div className="space-y-2 px-4 pt-2 pb-6">
+              <div className="flex flex-col space-y-2 px-4 pt-2 pb-6">
                 <Link
                   href="/#"
                   className="block rounded-md px-3 py-3 text-base font-medium text-gray-700 hover:bg-gray-50"
